@@ -48,3 +48,5 @@ position = Vector2(519, 313)
 
 [node name="Camera2D" type="Camera2D" parent="main character" unique_id=1912602924]
 position = Vector2(0.66666675, -69.333336)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5
