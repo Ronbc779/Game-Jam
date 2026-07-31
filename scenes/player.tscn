@@ -183,3 +183,9 @@ frame_progress = 0.57027656
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=522637750]
 position = Vector2(0, -34.333332)
 shape = SubResource("CapsuleShape2D_xrivr")
+
+[node name="sprintTimer" type="Timer" parent="." unique_id=1387727772]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="sprintTimer" to="." method="_on_sprint_timer_timeout"]
