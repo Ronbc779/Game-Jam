@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c75i5pq6q8xxq"]
+
+[ext_resource type="PackedScene" uid="uid://biqeuojs5otlh" path="res://scenes/sell_item.tscn" id="1_fs6yy"]
+
+[node name="Control" type="Control" unique_id=1622125491]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=395076378]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 41.0
+offset_right = 1071.0
+offset_bottom = 610.0
+theme_override_constants/separation = 20
+
+[node name="SellItem" parent="HBoxContainer" unique_id=702881911 instance=ExtResource("1_fs6yy")]
+layout_mode = 2
+
+[node name="SellItem2" parent="HBoxContainer" unique_id=1436691577 instance=ExtResource("1_fs6yy")]
+layout_mode = 2
+
+[node name="SellItem3" parent="HBoxContainer" unique_id=1268978391 instance=ExtResource("1_fs6yy")]
+layout_mode = 2
