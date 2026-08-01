@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://chunypk5a35q8"]
 
 [ext_resource type="PackedScene" uid="uid://d3p0w7xedufrr" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://dh6elx3bkgkqh" path="res://scenes/main.gd" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="2_0wfyh"]
 [ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="2_tefeu"]
 [ext_resource type="Script" uid="uid://ch0r4pmc5pans" path="res://scripts/hud.gd" id="2_tipki"]
@@ -15,7 +14,6 @@
 distance = 63.0
 
 [node name="main" type="Node2D" unique_id=713853499]
-script = ExtResource("1_o6xl0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1767108926]
 position = Vector2(550, 583)
