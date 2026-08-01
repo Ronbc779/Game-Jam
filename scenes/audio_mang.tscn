@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dfg1403hh2lbd"]
+
+[ext_resource type="Script" uid="uid://bpe3h5h3748ra" path="res://scripts/audio_mang.gd" id="1_uldpc"]
+[ext_resource type="AudioStream" uid="uid://dq1g3ymm0kpip" path="res://assets/audio/day_Final_loop.ogg" id="2_g1a73"]
+
+[node name="audio_mang" type="Node" unique_id=516952069 node_paths=PackedStringArray("clips")]
+script = ExtResource("1_uldpc")
+clips = NodePath("clips")
+
+[node name="clips" type="Node" parent="." unique_id=1788775960]
+
+[node name="dayTheme" type="AudioStreamPlayer" parent="clips" unique_id=395825543]
+stream = ExtResource("2_g1a73")
