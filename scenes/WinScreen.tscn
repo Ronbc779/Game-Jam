@@ -23,3 +23,16 @@ theme_override_font_sizes/font_size = 24
 text = "You Win"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=2061324132]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 63.0
+offset_right = 778.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.95289654, 0.9522709, 3.080368e-06, 1)
+theme_override_fonts/font = ExtResource("1_ulig0")
+theme_override_font_sizes/font_size = 80
+text = "YOU DID IT!"
+horizontal_alignment = 1
+vertical_alignment = 1
