@@ -4,6 +4,9 @@
 [ext_resource type="AudioStream" uid="uid://dq1g3ymm0kpip" path="res://assets/audio/day_Final_loop.ogg" id="1_g1a73"]
 [ext_resource type="AudioStream" uid="uid://vowiydhkj2tw" path="res://assets/audio/night_Final_loop.ogg" id="2_58syv"]
 [ext_resource type="AudioStream" uid="uid://cib61ouyl8531" path="res://assets/audio/menu_Final_loop.ogg" id="3_ndfay"]
+[ext_resource type="AudioStream" uid="uid://4bthlkvm0k38" path="res://assets/audio/purchase_success.ogg" id="5_egdpv"]
+[ext_resource type="AudioStream" uid="uid://bvxqevgcvxlx" path="res://assets/audio/select_item.ogg" id="6_0860m"]
+[ext_resource type="AudioStream" uid="uid://bwqidhnicaf2m" path="res://assets/audio/open_menu.ogg" id="7_wsb2l"]
 
 [node name="audio_mang" type="Node" unique_id=521133932 node_paths=PackedStringArray("clips")]
 script = ExtResource("1_58syv")
@@ -19,3 +22,12 @@ stream = ExtResource("2_58syv")
 
 [node name="menuTheme" type="AudioStreamPlayer" parent="clips" unique_id=1241790331]
 stream = ExtResource("3_ndfay")
+
+[node name="purchaseSFX" type="AudioStreamPlayer" parent="clips" unique_id=507308772]
+stream = ExtResource("5_egdpv")
+
+[node name="pickSFX" type="AudioStreamPlayer" parent="clips" unique_id=2082257107]
+stream = ExtResource("6_0860m")
+
+[node name="openSFX" type="AudioStreamPlayer" parent="clips" unique_id=1984222887]
+stream = ExtResource("7_wsb2l")

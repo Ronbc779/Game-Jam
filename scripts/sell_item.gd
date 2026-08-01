@@ -29,10 +29,12 @@ func _ready() -> void:
 	buy_button.pressed.connect(_on_buy_pressed)
 
 func _on_minus_pressed() -> void:
+	AudioMang.play_sfx("pickSFX")
 	quantity = max(1, quantity - 1)
 	update_labels()
 
 func _on_plus_pressed() -> void:
+	AudioMang.play_sfx("pickSFX")
 	quantity = min(max_quantity, quantity + 1)
 	update_labels()
 
@@ -41,6 +43,7 @@ func update_labels() -> void:
 	buy_button.text = "Buy ₱%d" % (price * quantity)
 
 func _on_buy_pressed() -> void:
+	AudioMang.play_sfx("purchaseSFX")
 	var bought_count := 0
 	for i in quantity:
 		if ShopManager.buy_item(category, item_name, price):

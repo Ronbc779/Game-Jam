@@ -11,3 +11,7 @@ func lose(reason: String) -> void:
 	did_win = false
 	lose_reason = reason
 	get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
+
+func restart() -> void:
+	ShopManager.start_new_run()
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
