@@ -34,6 +34,7 @@ autowrap_mode = 3
 
 [node name="MessageLabel" type="Label" parent="TextBlock" unique_id=94569962]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.10224319, 0.10224321, 0.10224321, 1)
 theme_override_fonts/font = ExtResource("1_0rf5w")
 theme_override_font_sizes/font_size = 16
 text = "I WANT A TOY"
