@@ -4,7 +4,6 @@ extends Control
 var sell_item_scene: PackedScene = preload("res://scenes/sell_item.tscn")
 
 func populate(category: String, items: Array) -> void:
-	# clear whatever rows were shown for the previous shop
 	for child in item_container.get_children():
 		child.queue_free()
 

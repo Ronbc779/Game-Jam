@@ -19,8 +19,10 @@ config/icon="res://icon.svg"
 
 Currency="*uid://giobvw1xpwge"
 ShopManager="*uid://hhccmg3h2h43"
-<<<<<<<HEADShopManager="*uid://hhccmg3h2h43"
 AudioMang="*uid://dfg1403hh2lbd"
+<<<<<<<UpdatedupstreamAudioMang="uid://dfg1403hh2lbd"
+<<<<<<<HEADShopManager="uid://hhccmg3h2h43"
+GameResult="*uid://bnuinj4d8jwle"
 
 [display]
 

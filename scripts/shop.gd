@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var category: String = "toys"
+@export var category: String = "toy"
 @export var shop_ui_path: NodePath
 
 var player_in_range: bool = false

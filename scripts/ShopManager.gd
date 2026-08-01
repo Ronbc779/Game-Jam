@@ -55,11 +55,16 @@ var category_message_templates: Array = [
 	"Wag kalimutan yung {value} ha!",
 	"Gusto ko sana ng {value} pasalubong.",
 	"{value} lang, kahit ano basta {value}.",
+	"I forgot to tell you to buy {value}.",
+	"Beh, sabi ni mama bilhan mo raw siya ng {value}.",
+	"Ang cra is ving for to is day's vid is eo is {value}.",
 ]
 var item_message_templates: Array = [
 	"Yung {value} lang talaga gusto ko!",
 	"Wag kang uuwi kung wala kang {value}.",
 	"Sabi ko sayo, {value} lang ha!",
+	"Beh, sabi ni mama bilhan mo raw siya ng {value}.",
+	"Uych, sisch, pabilich ngch {value}ch hach? Salamatch.",
 ]
 
 var checklist: Array = []

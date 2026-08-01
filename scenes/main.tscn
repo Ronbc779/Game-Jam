@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b43y1cjs3y06x" path="res://scripts/checklist_ui.gd" id="5_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dq6yy1olpophn" path="res://assets/images/phone.png" id="6_choun"]
 [ext_resource type="AudioStream" uid="uid://dqocfw6hd1mkq" path="res://assets/audio/footstep_concrete_000.ogg" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://065nkqikkq5v" path="res://scenes/DepartureArea.tscn" id="12_eb6dy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_13qdw"]
 distance = 63.0
@@ -109,6 +110,9 @@ shop_ui_path = NodePath("../CanvasLayer/Control")
 position = Vector2(1498, 510)
 category = "souvenir"
 shop_ui_path = NodePath("../CanvasLayer/Control")
+
+[node name="DepartureArea" parent="." unique_id=853371673 instance=ExtResource("12_eb6dy")]
+position = Vector2(2928, 509)
 
 [node name="main character" parent="." unique_id=1068984735 groups=["player"] instance=ExtResource("1_o5qli")]
 position = Vector2(547, 519)

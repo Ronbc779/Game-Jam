@@ -26,7 +26,7 @@ size_flags_horizontal = 3
 [node name="NameLabel" type="Label" parent="TextBlock" unique_id=2002182099]
 texture_filter = 1
 layout_mode = 2
-theme_override_colors/font_color = Color(0.60212064, 0.78610003, 0.99174994, 1)
+theme_override_colors/font_color = Color(0.05942645, 0.30058596, 0.5342869, 1)
 theme_override_fonts/font = ExtResource("1_0rf5w")
 theme_override_font_sizes/font_size = 25
 text = "NAME B. NAME"

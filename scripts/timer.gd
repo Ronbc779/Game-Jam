@@ -26,12 +26,15 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	if boarding_triggered:
 		return
+
 	minutes_elapsed += 1
 	update_label()
+
 	if minutes_elapsed >= minutes_until_boarding:
 		boarding_triggered = true
 		timer.stop()
 		boarding_time_reached.emit()
+		GameResult.lose("You missed your flight. Now you have to wait next year.")
 
 func update_label() -> void:
 	var current_total := start_total_minutes + minutes_elapsed
