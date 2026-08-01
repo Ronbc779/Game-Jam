@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://1gcs11vox4he"]
 
 [ext_resource type="Script" path="res://scripts/requirement_row.gd" id="1_0qgf2"]
+=======
+[gd_scene format=3 uid="uid://biprasttojtv7"]
+
+[ext_resource type="Script" uid="uid://tk5p87uwxr5p" path="res://scripts/requirement_row.gd" id="1_0qgf2"]
+>>>>>>> Stashed changes
 [ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="1_0rf5w"]
 
 [node name="RequirementRow" type="HBoxContainer" unique_id=70424324]

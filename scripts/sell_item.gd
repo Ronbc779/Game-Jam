@@ -9,19 +9,21 @@ extends HBoxContainer
 
 var item_name: String = ""
 var price: int = 0
+var category: String = ""
 var quantity: int = 1
 var max_quantity: int = 10
 
-func setup(new_name: String, new_price: int, texture: Texture2D) -> void:
+func setup(new_name: String, new_price: int, new_category: String, texture: Texture2D = null) -> void:
 	item_name = new_name
 	price = new_price
+	category = new_category
 	name_label.text = new_name
-	texture_rect.texture = texture
+	if texture:
+		texture_rect.texture = texture
 	quantity = 1
 	update_labels()
 
 func _ready() -> void:
-	buy_button.text = "Buy ₱%d" % (price * quantity)
 	minus_button.pressed.connect(_on_minus_pressed)
 	plus_button.pressed.connect(_on_plus_pressed)
 	buy_button.pressed.connect(_on_buy_pressed)
@@ -39,10 +41,17 @@ func update_labels() -> void:
 	buy_button.text = "Buy ₱%d" % (price * quantity)
 
 func _on_buy_pressed() -> void:
-	var total_price := price * quantity
-	if Currency.spend(total_price):
-		print("Bought %d x %s for ₱%d" % [quantity, item_name, total_price])
-		quantity = 1
-		update_labels()
-	else:
-		print("Not enough money for %d x %s" % [quantity, item_name])
+	var bought_count := 0
+	for i in quantity:
+		if ShopManager.buy_item(category, item_name, price):
+			bought_count += 1
+		else:
+			break
+
+	if bought_count > 0:
+		print("Bought %d x %s for ₱%d" % [bought_count, item_name, price * bought_count])
+	if bought_count < quantity:
+		print("Could only afford %d of %d" % [bought_count, quantity])
+
+	quantity = 1
+	update_labels()

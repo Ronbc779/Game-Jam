@@ -26,10 +26,8 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	if boarding_triggered:
 		return
-
 	minutes_elapsed += 1
 	update_label()
-
 	if minutes_elapsed >= minutes_until_boarding:
 		boarding_triggered = true
 		timer.stop()
@@ -43,11 +41,9 @@ func format_time(total_minutes: int) -> String:
 	total_minutes = total_minutes % (24 * 60)
 	var hour_24 := total_minutes / 60
 	var minute := total_minutes % 60
-
 	var is_pm := hour_24 >= 12
 	var hour_12 := hour_24 % 12
 	if hour_12 == 0:
 		hour_12 = 12
-
 	var suffix := "PM" if is_pm else "AM"
 	return "%02d:%02d %s" % [hour_12, minute, suffix]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c75i5pq6q8xxq"]
 
 [ext_resource type="PackedScene" uid="uid://biqeuojs5otlh" path="res://scenes/sell_item.tscn" id="1_fs6yy"]
+[ext_resource type="Script" uid="uid://blk2gc3sk3fgw" path="res://scripts/shop_ui.gd" id="1_oixfk"]
 
 [node name="Control" type="Control" unique_id=1622125491]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oixfk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2136698713]
 layout_mode = 0
@@ -18,20 +20,17 @@ offset_right = 958.0
 offset_bottom = 457.0
 color = Color(0.043137256, 0.043137256, 0.043137256, 0.32156864)
 
-[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=395076378]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1718329813]
 layout_mode = 0
-offset_left = 179.0
-offset_top = 103.0
-offset_right = 1232.125
-offset_bottom = 640.6147
-scale = Vector2(0.73, 0.73)
+offset_left = 156.0
+offset_top = 89.0
+offset_right = 958.0
+offset_bottom = 457.0
+
+[node name="ItemContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1731555269]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 20
 
-[node name="SellItem" parent="HBoxContainer" unique_id=702881911 instance=ExtResource("1_fs6yy")]
-layout_mode = 2
-
-[node name="SellItem2" parent="HBoxContainer" unique_id=1436691577 instance=ExtResource("1_fs6yy")]
-layout_mode = 2
-
-[node name="SellItem3" parent="HBoxContainer" unique_id=1268978391 instance=ExtResource("1_fs6yy")]
+[node name="SellItem" parent="ScrollContainer/ItemContainer" unique_id=702881911 instance=ExtResource("1_fs6yy")]
 layout_mode = 2

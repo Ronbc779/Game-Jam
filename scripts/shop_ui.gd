@@ -1,0 +1,14 @@
+extends Control
+
+@onready var item_container: Container = $ScrollContainer/ItemContainer  # adjust path to match your tree
+var sell_item_scene: PackedScene = preload("res://scenes/sell_item.tscn")
+
+func populate(category: String, items: Array) -> void:
+	# clear whatever rows were shown for the previous shop
+	for child in item_container.get_children():
+		child.queue_free()
+
+	for item in items:
+		var row = sell_item_scene.instantiate()
+		item_container.add_child(row)
+		row.setup(item["name"], item["price"], category)

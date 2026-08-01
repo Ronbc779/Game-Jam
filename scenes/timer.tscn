@@ -9,6 +9,7 @@ anchors_preset = 0
 script = ExtResource("1_5lxq6")
 
 [node name="Label" type="Label" parent="." unique_id=1657519209]
+texture_filter = 1
 layout_mode = 0
 offset_right = 39.0
 offset_bottom = 21.0
