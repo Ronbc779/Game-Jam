@@ -7,6 +7,7 @@ var bgm_stream: AudioStreamPlayer
 @export_group("main")
 @export var clips: Node
 
+
 func play_bgm(audio_name: String,from_position: float = 0.0) -> void:
 		bgm_stream = clips.get_node(audio_name)
 		bgm_stream.set_volume_db(-5.0)
@@ -18,10 +19,13 @@ func play_sfx(audio_name: String,from_position: float = 0.0) -> void:
 		sfx_stream.play(from_position)
 		
 # At scene exit
-func _exit_tree() -> void:
-	if sfx_stream != null and bgm_stream != null:
-		sfx_stream.stop()
+func stop_bgm() -> void:
+	if bgm_stream:
 		bgm_stream.stop()
+
+func stop_sfx() -> void:
+	if sfx_stream:
+		sfx_stream.stop()
 		
 	
 		

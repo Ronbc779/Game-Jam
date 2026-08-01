@@ -26,6 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if shop_open:
 			close_shop()
 		else:
+			AudioMang.play_sfx("openSFX")
 			open_shop()
 
 func open_shop() -> void:
