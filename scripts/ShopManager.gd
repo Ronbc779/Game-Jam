@@ -28,11 +28,11 @@ var shops: Dictionary = {
 }
 
 var people_pool: Array = [
-	{"name": "Tita Baby", "avatar": preload("res://icon.svg")},
-	{"name": "Sharmaine", "avatar": preload("res://icon.svg")},
+	{"name": "Tita Baby", "avatar": null},
+	{"name": "Sharmaine", "avatar": null},
 	{"name": "Girlie", "avatar": preload("res://icon.svg")},
 	{"name": "Panying", "avatar": preload("res://icon.svg")},
-	{"name": "Ate Grace", "avatar": preload("res://icon.svg")},
+	{"name": "Ate Grace", "avatar": null},
 ]
 
 var requirement_types_pool: Array = [
