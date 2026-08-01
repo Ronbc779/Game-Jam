@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://1gcs11vox4he"]
+
+[ext_resource type="Script" path="res://scripts/requirement_row.gd" id="1_0qgf2"]
+[ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="1_0rf5w"]
+
+[node name="RequirementRow" type="HBoxContainer" unique_id=70424324]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0qgf2")
+
+[node name="AvatarTextureRect" type="TextureRect" parent="." unique_id=116409252]
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextBlock" type="VBoxContainer" parent="." unique_id=1171425985]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="TextBlock" unique_id=2002182099]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.60212064, 0.78610003, 0.99174994, 1)
+theme_override_fonts/font = ExtResource("1_0rf5w")
+theme_override_font_sizes/font_size = 25
+text = "NAME B. NAME"
+
+[node name="MessageLabel" type="Label" parent="TextBlock" unique_id=94569962]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0rf5w")
+theme_override_font_sizes/font_size = 16
+text = "I WANT A TOY"

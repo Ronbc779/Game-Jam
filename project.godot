@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Currency="*uid://giobvw1xpwge"
+ShopManager="*uid://hhccmg3h2h43"
 AudioMang="*uid://dfg1403hh2lbd"
 
 [display]
