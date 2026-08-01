@@ -1,21 +1,19 @@
 extends Node
-# Autoload this as "ShopManager". Must load AFTER "Currency" in the Autoload list.
 
 signal checklist_updated
 
-# ── Shops: unchanged, edit freely ──
 var shops: Dictionary = {
-	"toys": {
+	"toy": {
 		"items": [
-			{"name": "Wooden Yoyo",    "price": 100},
-			{"name": "Bahay Kubo Toy", "price": 180},
-			{"name": "Sungka Set",     "price": 250},
+			{"name": "Wooden Yoyo", "price": 100},
+			{"name": "Lato-lato", "price": 180},
+			{"name": "Sungka Set", "price": 250},
 		]
 	},
 	"souvenir": {
 		"items": [
-			{"name": "Keychain",             "price": 80},
-			{"name": "Fridge Magnet",        "price": 60},
+			{"name": "Keychain", "price": 80},
+			{"name": "Fridge Magnet", "price": 60},
 			{"name": "Pututoy", "price": 150},
 		]
 	},
@@ -38,12 +36,18 @@ var people_pool: Array = [
 ]
 
 var requirement_types_pool: Array = [
-	{"type": "category", "value": "toys"},
+	{"type": "category", "value": "toy"},
 	{"type": "category", "value": "souvenir"},
 	{"type": "category", "value": "food"},
 	{"type": "item", "value": "Bukopie"},
 	{"type": "item", "value": "Sungka Set"},
-	{"type": "item", "value": "Capiz Shell Ornament"},
+	{"type": "item", "value": "Pututoy"},
+	{"type": "item", "value": "Tunapie"},
+	{"type": "item", "value": "Wooden Yoyo"},
+	{"type": "item", "value": "Keychain"},
+	{"type": "item", "value": "Applepie"},
+	{"type": "item", "value": "Lato-lato"},
+	{"type": "item", "value": "Fridge Magnet"},
 ]
 
 var category_message_templates: Array = [
@@ -58,7 +62,6 @@ var item_message_templates: Array = [
 	"Sabi ko sayo, {value} lang ha!",
 ]
 
-# Each entry: {type, value, person, avatar, message, bought, item_name, price_paid}
 var checklist: Array = []
 
 func _ready() -> void:
@@ -100,7 +103,7 @@ func start_new_run() -> void:
 	checklist_updated.emit()
 
 	var min_cost: int = _minimum_required_cost()
-	var spending_buffer: int = 300
+	var spending_buffer: int = 750
 	Currency.randomize_starting_money(min_cost, min_cost + spending_buffer)
 
 func _minimum_required_cost() -> int:

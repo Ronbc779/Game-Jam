@@ -45,21 +45,6 @@ theme_override_font_sizes/font_size = 29
 text = "Cash: 999999"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" parent="CanvasLayer" unique_id=1622125491 instance=ExtResource("3_sugp2")]
-offset_left = 9.0
-offset_top = 45.0
-offset_right = -66.0
-offset_bottom = -140.0
-metadata/_edit_use_anchors_ = true
-
-[node name="timer" parent="CanvasLayer" unique_id=1301122954 instance=ExtResource("4_o6xl0")]
-texture_filter = 1
-offset_left = 506.0
-offset_top = 20.0
-offset_right = 506.0
-offset_bottom = 20.0
-scale = Vector2(1.885, 1.885)
-
 [node name="ChecklistPanel" type="Control" parent="CanvasLayer" unique_id=426429989]
 layout_mode = 3
 anchors_preset = 0
@@ -95,6 +80,21 @@ horizontal_scroll_mode = 0
 [node name="ItemList" type="VBoxContainer" parent="CanvasLayer/ChecklistPanel/ScrollContainer" unique_id=315490811]
 layout_mode = 2
 script = ExtResource("5_o6xl0")
+
+[node name="Control" parent="CanvasLayer" unique_id=1622125491 instance=ExtResource("3_sugp2")]
+offset_left = 9.0
+offset_top = 45.0
+offset_right = -66.0
+offset_bottom = -140.0
+metadata/_edit_use_anchors_ = true
+
+[node name="timer" parent="CanvasLayer" unique_id=1301122954 instance=ExtResource("4_o6xl0")]
+texture_filter = 1
+offset_left = 506.0
+offset_top = 20.0
+offset_right = 506.0
+offset_bottom = 20.0
+scale = Vector2(1.885, 1.885)
 
 [node name="Shop1" parent="." unique_id=1341165774 instance=ExtResource("4_jyhfs")]
 position = Vector2(825, 503)
