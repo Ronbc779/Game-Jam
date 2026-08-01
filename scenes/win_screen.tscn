@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://l2kl1hitw1c3"]
+
+[ext_resource type="Script" uid="uid://cdm1osad6hahu" path="res://scripts/WinScreen.gd" id="1_erk2x"]
+[ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="2_2l6cc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3j6d"]
+bg_color = Color(0.4627451, 0.84705883, 0.6, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okh34"]
+bg_color = Color(0.5859384, 0.93195176, 0.69727546, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="WinScreen" type="Control" unique_id=2080683494]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_erk2x")
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1796645356]
+layout_mode = 0
+offset_top = 285.0
+offset_right = 1154.0
+offset_bottom = 360.0
+theme_override_fonts/font = ExtResource("2_2l6cc")
+theme_override_font_sizes/font_size = 54
+text = "You Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=2061324132]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 63.0
+offset_right = 1152.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.95289654, 0.9522709, 3.080368e-06, 1)
+theme_override_fonts/font = ExtResource("2_2l6cc")
+theme_override_font_sizes/font_size = 80
+text = "YOU DID IT!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="." unique_id=517856328]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 433.0
+offset_right = 717.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("2_2l6cc")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_x3j6d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_okh34")
+text = "Play Again"

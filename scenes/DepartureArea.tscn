@@ -21,7 +21,7 @@ position = Vector2(0, -64)
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_xrivr")
 
-[node name="Label" type="Label" parent="." unique_id=1577200251]
+[node name="PromptLabel" type="Label" parent="." unique_id=1577200251]
 offset_left = -65.0
 offset_top = -315.0
 offset_right = 68.0
