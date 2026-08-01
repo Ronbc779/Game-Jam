@@ -111,3 +111,5 @@ sfx_footsteps = ExtResource("9_85g3d")
 position = Vector2(9, -65.333336)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.5
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
