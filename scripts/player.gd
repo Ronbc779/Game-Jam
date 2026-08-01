@@ -5,10 +5,10 @@ extends CharacterBody2D
 const SPEED = 300.0
 const SPRINT_MULT = 1.5
 
-# Audio initialize
-@export var sfx_footsteps : AudioStream
+# Audio containers
+@export var sfx_footsteps : AudioStreamRandomizer
 # Set foot hit frames relative to spritesheet 
-var footstep_frames : Array = [3,9] # TO EDIT WITH LEI'S SPRITE
+var footstep_frames : Array = [4,8] # TO EDIT WITH LEI'S SPRITE
 
 func _physics_process(delta: float) -> void:
 	
