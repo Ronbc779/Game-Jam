@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgfy1hdddn10w" path="res://scenes/shop.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dsv1yaispraxf" path="res://scenes/timer.tscn" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://b43y1cjs3y06x" path="res://scripts/checklist_ui.gd" id="5_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dq6yy1olpophn" path="res://assets/images/phone.png" id="6_choun"]
 [ext_resource type="AudioStream" uid="uid://dqocfw6hd1mkq" path="res://assets/audio/footstep_concrete_000.ogg" id="9_85g3d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_13qdw"]
@@ -65,24 +66,30 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PhoneBackground" type="TextureRect" parent="CanvasLayer/ChecklistPanel" unique_id=610226494]
+[node name="PhoneBackground" type="NinePatchRect" parent="CanvasLayer/ChecklistPanel" unique_id=54910325]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 58.0
-offset_top = 365.0
-offset_right = 284.0
+offset_left = 43.0
+offset_top = 317.0
+offset_right = 298.0
 offset_bottom = 606.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("6_choun")
+region_rect = Rect2(40, 1, 192, 299)
+patch_margin_left = 20
+patch_margin_top = 45
+patch_margin_right = 20
+patch_margin_bottom = 44
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ChecklistPanel" unique_id=1727145297]
 layout_mode = 0
 offset_left = 58.0
 offset_top = 365.0
 offset_right = 324.0
-offset_bottom = 646.0
+offset_bottom = 599.0
 horizontal_scroll_mode = 0
 
 [node name="ItemList" type="VBoxContainer" parent="CanvasLayer/ChecklistPanel/ScrollContainer" unique_id=315490811]

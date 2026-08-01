@@ -1,39 +1,40 @@
 extends Node
+# Autoload this as "ShopManager". Must load AFTER "Currency" in the Autoload list.
 
 signal checklist_updated
 
-
+# ── Shops: unchanged, edit freely ──
 var shops: Dictionary = {
 	"toys": {
 		"items": [
-			{"name": "Wooden Yoyo", "price": 100},
+			{"name": "Wooden Yoyo",    "price": 100},
 			{"name": "Bahay Kubo Toy", "price": 180},
-			{"name": "Sungka Set", "price": 250},
+			{"name": "Sungka Set",     "price": 250},
 		]
 	},
 	"souvenir": {
 		"items": [
-			{"name": "Keychain", "price": 80},
-			{"name": "Fridge Magnet", "price": 60},
+			{"name": "Keychain",             "price": 80},
+			{"name": "Fridge Magnet",        "price": 60},
 			{"name": "Pututoy", "price": 150},
 		]
 	},
 	"food": {
 		"items": [
-			{"name": "Bukopie", "price": 100},
-			{"name": "Tunapie", "price": 200},
+			{"name": "Bukopie",  "price": 100},
+			{"name": "Tunapie",  "price": 200},
 			{"name": "Applepie", "price": 300},
-			{"name": "Otap", "price": 90},
+			{"name": "Otap",     "price": 90},
 		]
 	},
 }
 
 var people_pool: Array = [
-	{"name": "Aaa Mama Globe", "avatar": preload("res://icon.svg")},
-	{"name": "Bebeluvs", "avatar": preload("res://icon.svg")},
+	{"name": "Tita Baby", "avatar": preload("res://icon.svg")},
 	{"name": "Sharmaine", "avatar": preload("res://icon.svg")},
 	{"name": "Girlie", "avatar": preload("res://icon.svg")},
 	{"name": "Panying", "avatar": preload("res://icon.svg")},
+	{"name": "Ate Grace", "avatar": preload("res://icon.svg")},
 ]
 
 var requirement_types_pool: Array = [
@@ -42,13 +43,13 @@ var requirement_types_pool: Array = [
 	{"type": "category", "value": "food"},
 	{"type": "item", "value": "Bukopie"},
 	{"type": "item", "value": "Sungka Set"},
-	{"type": "item", "value": "Pututoy"},
+	{"type": "item", "value": "Capiz Shell Ornament"},
 ]
 
 var category_message_templates: Array = [
 	"Pwede paki bilhan ako ng {value}?",
 	"Wag kalimutan yung {value} ha!",
-	"Can you buy me a {value} nalang?",
+	"Gusto ko sana ng {value} pasalubong.",
 	"{value} lang, kahit ano basta {value}.",
 ]
 var item_message_templates: Array = [
@@ -57,7 +58,7 @@ var item_message_templates: Array = [
 	"Sabi ko sayo, {value} lang ha!",
 ]
 
-#
+# Each entry: {type, value, person, avatar, message, bought, item_name, price_paid}
 var checklist: Array = []
 
 func _ready() -> void:
@@ -97,6 +98,34 @@ func start_new_run() -> void:
 		})
 
 	checklist_updated.emit()
+
+	var min_cost: int = _minimum_required_cost()
+	var spending_buffer: int = 300
+	Currency.randomize_starting_money(min_cost, min_cost + spending_buffer)
+
+func _minimum_required_cost() -> int:
+	var total := 0
+	for entry in checklist:
+		if entry["type"] == "item":
+			total += _price_of_item(entry["value"])
+		else:
+			total += _cheapest_price_in_category(entry["value"])
+	return total
+
+func _price_of_item(item_name: String) -> int:
+	for category in shops.keys():
+		for item in shops[category]["items"]:
+			if item["name"] == item_name:
+				return item["price"]
+	return 0
+
+func _cheapest_price_in_category(category: String) -> int:
+	if not shops.has(category):
+		return 0
+	var cheapest: int = 999999
+	for item in shops[category]["items"]:
+		cheapest = min(cheapest, item["price"])
+	return cheapest
 
 func get_shop_items(category: String) -> Array:
 	if shops.has(category):
