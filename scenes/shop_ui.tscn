@@ -10,12 +10,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2136698713]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 89.0
+offset_right = 958.0
+offset_bottom = 457.0
+color = Color(0.043137256, 0.043137256, 0.043137256, 0.32156864)
+
 [node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=395076378]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 41.0
-offset_right = 1071.0
-offset_bottom = 610.0
+offset_left = 179.0
+offset_top = 103.0
+offset_right = 1232.125
+offset_bottom = 640.6147
+scale = Vector2(0.73, 0.73)
 theme_override_constants/separation = 20
 
 [node name="SellItem" parent="HBoxContainer" unique_id=702881911 instance=ExtResource("1_fs6yy")]

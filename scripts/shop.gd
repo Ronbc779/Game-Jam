@@ -1,26 +1,26 @@
 extends StaticBody2D
 
 @export var shop_ui_path: NodePath
+@onready var label: Label = $Label
 
 var player_in_range: bool = false
 var shop_open: bool = false
 var shop_ui: Control
 
 func _ready() -> void:
-	print("shop.gd ready, shop_ui_path = ", shop_ui_path)
 	shop_ui = get_node(shop_ui_path)
 	print("shop_ui resolved to: ", shop_ui)
 	shop_ui.visible = false
+	label.visible = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("body entered: ", body.name)
 	if body.is_in_group("player"):
+		label.visible = true
 		player_in_range = true
-		print("player_in_range = true")
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	print("body exited: ", body.name)
 	if body.is_in_group("player"):
+		label.visible = false
 		player_in_range = false
 		if shop_open:
 			close_shop()
@@ -35,11 +35,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				open_shop()
 
 func open_shop() -> void:
-	print("opening shop")
 	shop_open = true
 	shop_ui.visible = true
 
 func close_shop() -> void:
-	print("closing shop")
 	shop_open = false
 	shop_ui.visible = false

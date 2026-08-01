@@ -21,6 +21,7 @@ func setup(new_name: String, new_price: int, texture: Texture2D) -> void:
 	update_labels()
 
 func _ready() -> void:
+	buy_button.text = "Buy ₱%d" % (price * quantity)
 	minus_button.pressed.connect(_on_minus_pressed)
 	plus_button.pressed.connect(_on_plus_pressed)
 	buy_button.pressed.connect(_on_buy_pressed)

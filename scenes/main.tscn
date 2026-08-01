@@ -32,15 +32,25 @@ grow_horizontal = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(-20, 20)
 text = "Cash: 999999"
+metadata/_edit_use_anchors_ = true
 
 [node name="Control" parent="CanvasLayer" unique_id=1622125491 instance=ExtResource("3_sugp2")]
-offset_left = -23.0
-offset_top = 15.0
-offset_right = -98.0
-offset_bottom = -170.0
+offset_left = 13.0
+offset_top = -30.0
+offset_right = -62.0
+offset_bottom = -215.0
+metadata/_edit_use_anchors_ = true
 
 [node name="shop" parent="." unique_id=1341165774 instance=ExtResource("4_jyhfs")]
 position = Vector2(737, 330)
+shop_ui_path = NodePath("../CanvasLayer/Control")
+
+[node name="shop2" parent="." unique_id=424625855 instance=ExtResource("4_jyhfs")]
+position = Vector2(-91, 338)
+shop_ui_path = NodePath("../CanvasLayer/Control")
+
+[node name="shop3" parent="." unique_id=377003193 instance=ExtResource("4_jyhfs")]
+position = Vector2(1450, 313)
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="main character" parent="." unique_id=1068984735 groups=["player"] instance=ExtResource("1_o5qli")]
