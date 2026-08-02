@@ -5,26 +5,40 @@ signal checklist_updated
 var shops: Dictionary = {
 	"toy": {
 		"items": [
-			{"name": "Trumpo", "price": 100, "texture": preload("res://assets/images/toys/trumpo.png")},
-			{"name": "Pogs", "price": 180, "texture": preload("res://assets/images/toys/pogs.png")},
-			{"name": "Yoyo", "price": 250, "texture": preload("res://assets/images/toys/yo-yo.png")},
+			{"name": "Trumpo", "price": 60, "texture": preload("res://assets/images/toys/trumpo.png")},
+			{"name": "Pogs", "price": 50, "texture": preload("res://assets/images/toys/pogs.png")},
+			{"name": "Yoyo", "price": 40, "texture": preload("res://assets/images/toys/yo-yo.png")},
+			{"name": "Ball", "price": 120, "texture": preload("res://assets/images/toys/ball.png")},
+			{"name": "Cooking Set", "price": 200, "texture": preload("res://assets/images/toys/cooking_set.png")},
+			{"name": "Kite", "price": 90, "texture": preload("res://assets/images/toys/kite.png")},
+			{"name": "Sungka", "price": 250, "texture": preload("res://assets/images/toys/sungka.png")},
+			{"name": "Teddy Bear", "price": 300, "texture": preload("res://assets/images/toys/teddy_bear.png")},
 		]
 	},
 	"souvenir": {
 		"items": [
-			{"name": "Keychain", "price": 80, "texture": preload("res://assets/images/souvenir/keychain.png")},
-			{"name": "Dreamcatcher", "price": 60, "texture": preload("res://assets/images/souvenir/dreamcatcher.png")},
-			{"name": "Abaniko", "price": 150, "texture": preload("res://assets/images/souvenir/abaniko.png")},
+			{"name": "Keychain", "price": 55, "texture": preload("res://assets/images/souvenir/keychain.png")},
+			{"name": "Dreamcatcher", "price": 180, "texture": preload("res://assets/images/souvenir/dreamcatcher.png")},
+			{"name": "Abaniko", "price": 85, "texture": preload("res://assets/images/souvenir/abaniko.png")},
+			{"name": "Bag", "price": 250, "texture": preload("res://assets/images/souvenir/bag.png")},
+			{"name": "Jeepney Miniature", "price": 170, "texture": preload("res://assets/images/souvenir/jeepney_miniature.png")},
+			{"name": "Salakot", "price": 185, "texture": preload("res://assets/images/souvenir/salakot.png")},
+			{"name": "Tshirt", "price": 300, "texture": preload("res://assets/images/souvenir/tshirt.png")},
 		]
 	},
 	"food": {
 		"items": [
-			{"name": "Polvoron",  "price": 100, "texture": preload("res://assets/images/food/polvoron.png")},
-			{"name": "Chicharon",  "price": 200, "texture": preload("res://assets/images/food/chicharon.png")},
-			{"name": "Dried Mangoes", "price": 300, "texture": preload("res://assets/images/food/dried mango.png")},
-			{"name": "Mani", "price": 90, "texture": preload("res://assets/images/food/mani.png")},
-			{"name": "Suman", "price": 90, "texture": preload("res://assets/images/food/suman.png")},
-			{"name": "Biscocho", "price": 90, "texture": preload("res://assets/images/food/biscocho.png")},
+			{"name": "Polvoron",  "price": 30, "texture": preload("res://assets/images/food/polvoron.png")},
+			{"name": "Chicharon",  "price": 50, "texture": preload("res://assets/images/food/chicharon.png")},
+			{"name": "Dried Mangoes", "price": 120, "texture": preload("res://assets/images/food/dried mango.png")},
+			{"name": "Mani", "price": 25, "texture": preload("res://assets/images/food/mani.png")},
+			{"name": "Suman", "price": 35, "texture": preload("res://assets/images/food/suman.png")},
+			{"name": "Biscocho", "price": 40, "texture": preload("res://assets/images/food/biscocho.png")},
+			{"name": "Banana Chips", "price": 60, "texture": preload("res://assets/images/food/banana_chips.png")},
+			{"name": "Bibingka", "price": 50, "texture": preload("res://assets/images/food/bibingka.png")},
+			{"name": "Buko Pie", "price": 180, "texture": preload("res://assets/images/food/buko_pie.png")},
+			{"name": "Pastillas", "price": 65, "texture": preload("res://assets/images/food/pastillas.png")},
+			{"name": "Puto", "price": 55, "texture": preload("res://assets/images/food/puto.png")},
 		]
 	},
 }
@@ -47,18 +61,36 @@ var requirement_types_pool: Array = [
 	{"type": "category", "value": "toy"},
 	{"type": "category", "value": "souvenir"},
 	{"type": "category", "value": "food"},
+	#food
 	{"type": "item", "value": "Polvoron"},
 	{"type": "item", "value": "Chicharon"},
 	{"type": "item", "value": "Dried Mangoes"},
 	{"type": "item", "value": "Mani"},
 	{"type": "item", "value": "Suman"},
 	{"type": "item", "value": "Biscocho"},
+	{"type": "item", "value": "Banana Chips"},
+	{"type": "item", "value": "Bibingka"},
+	{"type": "item", "value": "Buko Pie"},
+	{"type": "item", "value": "Pastillas"},
+	{"type": "item", "value": "Puto"},
+	#toy
 	{"type": "item", "value": "Trumpo"},
 	{"type": "item", "value": "Yoyo"},
 	{"type": "item", "value": "Pogs"},
-	{"type": "item", "value": "Keychain"},
-	{"type": "item", "value": "Dreamcatcher"},
+	{"type": "item", "value": "Ball"},
+	{"type": "item", "value": "Cooking Set"},
+	{"type": "item", "value": "Kite"},
+	{"type": "item", "value": "Sungka"},
+	{"type": "item", "value": "Teddy Bear"},
+	#souvenir
 	{"type": "item", "value": "Abaniko"},
+	{"type": "item", "value": "Bag"},
+	{"type": "item", "value": "Dreamcatcher"},
+	{"type": "item", "value": "Jeepney Miniature"},
+	{"type": "item", "value": "Keychain"},
+	{"type": "item", "value": "Salakot"},
+	{"type": "item", "value": "Tshirt"}
+
 ]
 
 var category_message_templates: Array = [
