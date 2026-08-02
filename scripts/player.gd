@@ -7,8 +7,9 @@ const SPRINT_MULT = 1.5
 
 # Audio containers
 @export var sfx_footsteps : AudioStreamRandomizer
-# Set foot hit frames relative to spritesheet 
-var footstep_frames : Array = [3,9] # TO EDIT WITH LEI'S SPRITE
+# For walk cycle: sets footstep hit frames relative to spritesheet 
+var walk_footstep_frames : Array = [1,5] 
+var idle_footstep_frames : Array = [6,13]
 
 func _physics_process(delta: float) -> void:
 	
@@ -18,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")	
 	# Sprite changes
 	if abs(velocity.x) > 1:
-		animated_sprite_2d.sprite_frames.set_animation_speed("walk", 10)
+		animated_sprite_2d.sprite_frames.set_animation_speed("walk", 8)
 		animated_sprite_2d.animation = "walk"
 	else:
 		animated_sprite_2d.animation = "idle"
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	if Input.is_action_pressed("sprint"):
-		animated_sprite_2d.sprite_frames.set_animation_speed("walk", 15)
+		animated_sprite_2d.sprite_frames.set_animation_speed("walk", 12)
 		velocity *= SPRINT_MULT
 
 	move_and_slide()
@@ -46,6 +47,11 @@ func load_sfx(sfx_to_load):
 
 # Footsteps randomizer 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	if animated_sprite_2d.animation == "idle": return 
 	load_sfx(sfx_footsteps)
-	if animated_sprite_2d.frame in footstep_frames: sfx_player.play()
+
+	if animated_sprite_2d.animation == "idle" and animated_sprite_2d.frame in idle_footstep_frames:
+		pass #TBD
+	if animated_sprite_2d.animation == "walk" and animated_sprite_2d.frame in walk_footstep_frames:
+		sfx_player.play()
+
+		
