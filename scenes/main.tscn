@@ -136,11 +136,11 @@ category = "food"
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="Shop2" parent="." unique_id=424625855 instance=ExtResource("4_jyhfs")]
-position = Vector2(-917, 519)
+position = Vector2(-503, 519)
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="Shop3" parent="." unique_id=377003193 instance=ExtResource("4_jyhfs")]
-position = Vector2(2549, 519)
+position = Vector2(2496, 519)
 category = "souvenir"
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
