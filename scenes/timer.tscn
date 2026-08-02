@@ -13,7 +13,9 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 39.0
 offset_bottom = 21.0
+scale = Vector2(0.01, 0.01)
 theme_override_fonts/font = ExtResource("1_srplv")
+theme_override_font_sizes/font_size = 2000
 text = "00:00 PM"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -23,7 +25,9 @@ layout_mode = 0
 offset_top = 20.0
 offset_right = 66.0
 offset_bottom = 43.0
+scale = Vector2(0.01, 0.01)
 theme_override_fonts/font = ExtResource("1_srplv")
+theme_override_font_sizes/font_size = 2000
 text = "Boarding: 00:00 PM"
 
 [node name="Timer" type="Timer" parent="." unique_id=1710350261]
