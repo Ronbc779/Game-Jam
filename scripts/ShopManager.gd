@@ -20,11 +20,11 @@ var shops: Dictionary = {
 	"food": {
 		"items": [
 			{"name": "Polvoron",  "price": 100, "texture": preload("res://assets/images/food/polvoron.png")},
-			{"name": "Chicharon",  "price": 200, "texture": preload("res://assets/images/food/polvoron.png")},
-			{"name": "Dried Mangoes", "price": 300, "texture": preload("res://assets/images/food/polvoron.png")},
-			{"name": "Mani", "price": 90, "texture": preload("res://assets/images/food/polvoron.png")},
-			{"name": "Suman", "price": 90, "texture": preload("res://assets/images/food/polvoron.png")},
-			{"name": "Biscocho", "price": 90, "texture": preload("res://assets/images/food/polvoron.png")},
+			{"name": "Chicharon",  "price": 200, "texture": preload("res://assets/images/food/chicharon.png")},
+			{"name": "Dried Mangoes", "price": 300, "texture": preload("res://assets/images/food/dried mango.png")},
+			{"name": "Mani", "price": 90, "texture": preload("res://assets/images/food/mani.png")},
+			{"name": "Suman", "price": 90, "texture": preload("res://assets/images/food/suman.png")},
+			{"name": "Biscocho", "price": 90, "texture": preload("res://assets/images/food/biscocho.png")},
 		]
 	},
 }
