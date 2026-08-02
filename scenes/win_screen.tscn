@@ -40,20 +40,22 @@ script = ExtResource("1_erk2x")
 
 [node name="ResultLabel" type="Label" parent="." unique_id=1796645356]
 layout_mode = 0
-offset_top = 285.0
-offset_right = 1154.0
-offset_bottom = 360.0
+offset_left = 35.0
+offset_top = 207.0
+offset_right = 1247.0
+offset_bottom = 364.0
 theme_override_fonts/font = ExtResource("2_2l6cc")
 theme_override_font_sizes/font_size = 54
 text = "You Win"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Label" type="Label" parent="." unique_id=2061324132]
 layout_mode = 0
 offset_left = -3.0
 offset_top = 63.0
-offset_right = 1152.0
+offset_right = 1277.0
 offset_bottom = 192.0
 theme_override_colors/font_color = Color(0.95289654, 0.9522709, 3.080368e-06, 1)
 theme_override_fonts/font = ExtResource("2_2l6cc")
@@ -64,10 +66,10 @@ vertical_alignment = 1
 
 [node name="PlayAgainButton" type="Button" parent="." unique_id=517856328]
 layout_mode = 0
-offset_left = 461.0
-offset_top = 433.0
-offset_right = 717.0
-offset_bottom = 505.0
+offset_left = 507.0
+offset_top = 436.0
+offset_right = 763.0
+offset_bottom = 508.0
 theme_override_fonts/font = ExtResource("2_2l6cc")
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3j6d")

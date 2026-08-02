@@ -41,7 +41,6 @@ var people_pool: Array = [
 	{"name": "Papa", "avatar": null},
 	{"name": "Kuya Kim", "avatar": null},
 	{"name": "Bunso", "avatar": null},
-
 ]
 
 var requirement_types_pool: Array = [
@@ -60,7 +59,6 @@ var requirement_types_pool: Array = [
 	{"type": "item", "value": "Keychain"},
 	{"type": "item", "value": "Fridge Magnet"},
 	{"type": "item", "value": "Pututoy"},
-
 ]
 
 var category_message_templates: Array = [
@@ -70,7 +68,7 @@ var category_message_templates: Array = [
 	"{value} lang, kahit ano basta {value}.",
 	"I forgot to tell you to buy {value}.",
 	"Beh, sabi ni mama bilhan mo raw siya ng {value}.",
-	"Ang cra is ving for to is day’s vid is yew is {value}.",
+	"Ang cra is ving for to is day's vid is yew is {value}.",
 	"Pabili ako teh ng {value}, showcase ko lang sa vlog sa tiktok.",
 	"{value} na kahit ano, sa Lunes bayad",
 	"Uych, sisch, pabilich ngch {value}ch hach? Salamatch.",
@@ -91,10 +89,10 @@ var item_message_templates: Array = [
 	"pabili nga {value}, kailangan ni bunso para sa project nya",
 	"{value} lang akin, sa Lunes bayad.",
 	"Hi'ed. Ang'ed aking'ed kasautan'ed ay'ed... {value}'ed po'ed ate'ed.",
-
 ]
 
 var checklist: Array = []
+var extra_purchase_prices: Array = []
 
 func _ready() -> void:
 	start_new_run()
@@ -110,6 +108,8 @@ func start_new_run() -> void:
 	requirement_count = min(requirement_count, req_pool.size(), people.size())
 
 	checklist.clear()
+	extra_purchase_prices.clear()
+
 	for i in requirement_count:
 		var req = req_pool[i]
 		var person = people[i]
@@ -189,6 +189,9 @@ func buy_item(category: String, item_name: String, price: int) -> bool:
 				matched = true
 				break
 
+	if not matched:
+		extra_purchase_prices.append(price)
+
 	checklist_updated.emit()
 	return true
 
@@ -203,3 +206,26 @@ func checklist_complete_count() -> int:
 		if entry["bought"]:
 			count += 1
 	return count
+
+func calculate_score(minutes_left: int = 0) -> int:
+	var completed := checklist_complete_count()
+	var completion_score := completed * 100
+
+	var generosity_bonus := 0
+	if completed > 0:
+		var total_paid := 0
+		for entry in checklist:
+			if entry["bought"]:
+				total_paid += entry["price_paid"]
+		generosity_bonus = int(total_paid / float(completed))
+
+	var extra_bonus := 0
+	if not extra_purchase_prices.is_empty():
+		var total_extra := 0
+		for price in extra_purchase_prices:
+			total_extra += price
+		extra_bonus = int(total_extra / float(extra_purchase_prices.size()))
+
+	var speed_bonus := minutes_left * 5
+
+	return completion_score + generosity_bonus + extra_bonus + speed_bonus

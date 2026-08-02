@@ -19,12 +19,27 @@ distance = 63.0
 [node name="main" type="Node2D" unique_id=713853499]
 script = ExtResource("1_choun")
 
+[node name="Background" type="Parallax2D" parent="." unique_id=243750747]
+visible = false
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1194767]
+position = Vector2(583, 246)
+scale = Vector2(12.0625, 6.2890625)
+texture = ExtResource("2_0wfyh")
+
+[node name="Foreground" type="Parallax2D" parent="." unique_id=260017114]
+visible = false
+scroll_scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=1149201009]
+position = Vector2(606, 509)
+scale = Vector2(10.703125, 4.5390625)
+texture = ExtResource("2_0wfyh")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1767108926]
 position = Vector2(550, 583)
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1186284110]
-texture = ExtResource("2_0wfyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1674989224]
 shape = SubResource("WorldBoundaryShape2D_13qdw")
@@ -83,6 +98,7 @@ layout_mode = 2
 script = ExtResource("5_o6xl0")
 
 [node name="Control" parent="CanvasLayer" unique_id=1622125491 instance=ExtResource("3_sugp2")]
+visible = false
 offset_left = 9.0
 offset_top = 45.0
 offset_right = -66.0
@@ -98,21 +114,21 @@ offset_bottom = 20.0
 scale = Vector2(1.885, 1.885)
 
 [node name="Shop1" parent="." unique_id=1341165774 instance=ExtResource("4_jyhfs")]
-position = Vector2(825, 503)
+position = Vector2(1291, 519)
 category = "food"
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="Shop2" parent="." unique_id=424625855 instance=ExtResource("4_jyhfs")]
-position = Vector2(-138, 512)
+position = Vector2(-431, 519)
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="Shop3" parent="." unique_id=377003193 instance=ExtResource("4_jyhfs")]
-position = Vector2(1498, 510)
+position = Vector2(2330, 519)
 category = "souvenir"
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="DepartureArea" parent="." unique_id=853371673 instance=ExtResource("12_eb6dy")]
-position = Vector2(2928, 509)
+position = Vector2(3317, 519)
 
 [node name="main character" parent="." unique_id=1068984735 groups=["player"] instance=ExtResource("1_o5qli")]
 position = Vector2(547, 519)
