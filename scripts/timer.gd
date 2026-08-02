@@ -3,13 +3,16 @@ extends Control
 signal boarding_time_reached
 
 @onready var label: Label = $Label
+@onready var boarding_label: Label = $BoardingLabel
 @onready var timer: Timer = $Timer
 
 @export var minutes_until_boarding: int = 30
+@export var flash_threshold_seconds: int = 10
 
 var start_total_minutes: int = 0
 var minutes_elapsed: int = 0
 var boarding_triggered: bool = false
+var flash_on: bool = false
 
 func _ready() -> void:
 	var system_time := Time.get_time_dict_from_system()
@@ -21,6 +24,7 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
+	boarding_label.text = "Boarding: %s" % format_time(start_total_minutes + minutes_until_boarding)
 	update_label()
 
 func _on_timer_timeout() -> void:
@@ -29,6 +33,7 @@ func _on_timer_timeout() -> void:
 
 	minutes_elapsed += 1
 	update_label()
+	_update_flash()
 
 	if minutes_elapsed >= minutes_until_boarding:
 		boarding_triggered = true
@@ -39,6 +44,14 @@ func _on_timer_timeout() -> void:
 func update_label() -> void:
 	var current_total := start_total_minutes + minutes_elapsed
 	label.text = format_time(current_total)
+
+func _update_flash() -> void:
+	var seconds_left := minutes_until_boarding - minutes_elapsed
+	if seconds_left <= flash_threshold_seconds and seconds_left > 0:
+		flash_on = not flash_on
+		label.modulate = Color.RED if flash_on else Color.WHITE
+	else:
+		label.modulate = Color.WHITE
 
 func format_time(total_minutes: int) -> String:
 	total_minutes = total_minutes % (24 * 60)

@@ -18,4 +18,12 @@ text = "00:00 PM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BoardingLabel" type="Label" parent="." unique_id=465490364]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 66.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("1_srplv")
+text = "Boarding: 00:00 PM"
+
 [node name="Timer" type="Timer" parent="." unique_id=1710350261]
