@@ -124,6 +124,7 @@ offset_bottom = 599.0
 horizontal_scroll_mode = 0
 
 [node name="ItemList" type="VBoxContainer" parent="CanvasLayer/ChecklistPanel/ScrollContainer" unique_id=315490811]
+texture_filter = 1
 layout_mode = 2
 script = ExtResource("5_o6xl0")
 
@@ -183,6 +184,7 @@ edge_right_path = NodePath("../../EdgeRight")
 
 [node name="pause_menu" type="CanvasLayer" parent="." unique_id=43070589]
 process_mode = 3
+visible = false
 script = ExtResource("16_pm3ni")
 
 [node name="ColorRect" type="ColorRect" parent="pause_menu" unique_id=1704438106]
