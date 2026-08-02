@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c75i5pq6q8xxq" path="res://scenes/shop_ui.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cgfy1hdddn10w" path="res://scenes/shop.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dsv1yaispraxf" path="res://scenes/timer.tscn" id="4_o6xl0"]
-[ext_resource type="Script" uid="uid://b43y1cjs3y06x" path="res://scripts/checklist_ui.gd" id="5_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dq6yy1olpophn" path="res://assets/images/phone.png" id="6_choun"]
 [ext_resource type="AudioStream" uid="uid://dqocfw6hd1mkq" path="res://assets/audio/footstep_concrete_000.ogg" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://065nkqikkq5v" path="res://scenes/DepartureArea.tscn" id="12_eb6dy"]
@@ -34,6 +33,153 @@ distance = 63.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrivr"]
 normal = Vector2(1, 0)
+
+[sub_resource type="Animation" id="Animation_vxglm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1300, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fv21b"]
+resource_name = "slide_left"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1300, 0), Vector2(1106, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tel4y"]
+_data = {
+&"RESET": SubResource("Animation_vxglm"),
+&"slide_left": SubResource("Animation_fv21b")
+}
+
+[sub_resource type="GDScript" id="GDScript_yq6so"]
+script/source = "extends VBoxContainer
+
+var requirement_row_scene: PackedScene = preload(\"res://scenes/requirement_row.tscn\")
+
+@export var row_height: int = 80    
+@export var max_visible_rows: int = 3
+@onready var scroll_container: ScrollContainer = get_parent()  # this VBoxContainer must be INSIDE a ScrollContainer
+
+func _ready() -> void:
+	ShopManager.checklist_updated.connect(refresh)
+	refresh()
+
+func refresh() -> void:
+	for child in get_children():
+		child.queue_free()
+
+	for entry in ShopManager.checklist:
+		var row = requirement_row_scene.instantiate()
+		add_child(row)
+
+		var message: String
+		if entry[\"bought\"]:
+			message = \"Got it: %s ✔\" % entry[\"item_name\"]
+		else:
+			message = entry[\"message\"]
+
+		row.setup(entry[\"person\"], message, entry[\"avatar\"], entry[\"bought\"])
+
+	_update_scroll_size(ShopManager.checklist.size())
+
+func _update_scroll_size(entry_count: int) -> void:
+	var visible_rows: int = min(entry_count, max_visible_rows)
+	scroll_container.custom_minimum_size.y = visible_rows * row_height
+"
+
+[sub_resource type="Animation" id="Animation_2f3dj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_yq6so"]
+resource_name = "slide_up"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.19999999, 1.2),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 400), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fv21b"]
+_data = {
+&"RESET": SubResource("Animation_2f3dj"),
+&"slide_up": SubResource("Animation_yq6so")
+}
+
+[sub_resource type="Animation" id="Animation_tel4y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(506, -120)]
+}
+
+[sub_resource type="Animation" id="Animation_qkpxi"]
+resource_name = "slide_left"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 1.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(506, -120), Vector2(506, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5q0nq"]
+_data = {
+&"RESET": SubResource("Animation_tel4y"),
+&"slide_down": SubResource("Animation_qkpxi")
+}
 
 [node name="main" type="Node2D" unique_id=713853499]
 script = ExtResource("1_choun")
@@ -81,7 +227,8 @@ script = ExtResource("2_tipki")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -107.0
+offset_left = 20.0
+offset_right = 194.0
 offset_bottom = 50.0
 grow_horizontal = 0
 offset_transform_enabled = true
@@ -91,11 +238,16 @@ theme_override_font_sizes/font_size = 29
 text = "Cash: 999999"
 metadata/_edit_use_anchors_ = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/MoneyLabel" unique_id=1482421564]
+libraries/ = SubResource("AnimationLibrary_tel4y")
+autoplay = &"slide_left"
+
 [node name="ChecklistPanel" type="Control" parent="CanvasLayer" unique_id=426429989]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 400.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 440.00006
 
 [node name="PhoneBackground" type="NinePatchRect" parent="CanvasLayer/ChecklistPanel" unique_id=54910325]
 layout_mode = 1
@@ -126,7 +278,11 @@ horizontal_scroll_mode = 0
 [node name="ItemList" type="VBoxContainer" parent="CanvasLayer/ChecklistPanel/ScrollContainer" unique_id=315490811]
 texture_filter = 1
 layout_mode = 2
-script = ExtResource("5_o6xl0")
+script = SubResource("GDScript_yq6so")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ChecklistPanel" unique_id=421206384]
+libraries/ = SubResource("AnimationLibrary_fv21b")
+autoplay = &"slide_up"
 
 [node name="Control" parent="CanvasLayer" unique_id=1622125491 instance=ExtResource("3_sugp2")]
 visible = false
@@ -139,10 +295,14 @@ metadata/_edit_use_anchors_ = true
 [node name="timer" parent="CanvasLayer" unique_id=1301122954 instance=ExtResource("4_o6xl0")]
 texture_filter = 1
 offset_left = 506.0
-offset_top = 20.0
+offset_top = -120.0
 offset_right = 506.0
-offset_bottom = 20.0
+offset_bottom = -120.0
 scale = Vector2(1.885, 1.885)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/timer" unique_id=1868478777]
+libraries/ = SubResource("AnimationLibrary_5q0nq")
+autoplay = &"slide_down"
 
 [node name="Shop1" parent="." unique_id=1341165774 instance=ExtResource("4_jyhfs")]
 position = Vector2(1434, 519)

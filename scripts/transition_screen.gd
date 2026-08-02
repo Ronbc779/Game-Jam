@@ -14,11 +14,11 @@ func _ready():
 
 func _on_animation_finished(anim_name: String):
 	if anim_name == "to_black":
-		# Emit global signal
 		on_transition_finished.emit()
 		animation.play("to_scene")
 	elif anim_name == "to_scene":
 		color_rect.visible = false
+
 	
 func transition(): # Transition start
 	color_rect.visible = true
