@@ -7,7 +7,7 @@ signal PM_check(pm_check: bool)
 @onready var boarding_label: Label = $BoardingLabel
 @onready var timer: Timer = $Timer
 
-@export var minutes_until_boarding: int = 30
+@export var minutes_until_boarding: int = 60
 @export var flash_threshold_seconds: int = 10
 
 var start_total_minutes: int = 0
