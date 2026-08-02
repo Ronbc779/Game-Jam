@@ -15,7 +15,7 @@ func play_bgm(audio_name: String,from_position: float = 0.0) -> void:
 
 func play_sfx(audio_name: String,from_position: float = 0.0) -> void:
 		sfx_stream = clips.get_node(audio_name)
-		sfx_stream.set_volume_db(-3.0)
+		sfx_stream.set_volume_db(-5.0)
 		sfx_stream.play(from_position)
 		
 # At scene exit

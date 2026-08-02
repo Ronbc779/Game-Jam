@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://2qruggdg333o"]
+
+[ext_resource type="Texture2D" uid="uid://bkfcejkq5nscg" path="res://assets/images/ui/quit.png" id="1_2fbfq"]
+[ext_resource type="Script" uid="uid://bgs2nuwi7kr5x" path="res://scenes/credits.gd" id="1_8gwij"]
+[ext_resource type="Texture2D" uid="uid://d4jnmnk7d7uka" path="res://assets/images/ui/quit_pressed.png" id="2_8gwij"]
+[ext_resource type="Texture2D" uid="uid://b58yo3vgp3hhn" path="res://assets/images/ui/quit_hover.png" id="3_mah5v"]
+[ext_resource type="Script" uid="uid://kmfstlfqxj8" path="res://scenes/titleReturn.gd" id="4_kyhnv"]
+[ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="6_mah5v"]
+
+[sub_resource type="Animation" id="Animation_kyhnv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -900)]
+}
+
+[sub_resource type="Animation" id="Animation_ooihk"]
+resource_name = "credits_scroll"
+length = 45.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(325, -900), Vector2(325, 900)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ih6pn"]
+_data = {
+&"RESET": SubResource("Animation_kyhnv"),
+&"credits_scroll": SubResource("Animation_ooihk")
+}
+
+[node name="ColorRect" type="ColorRect" unique_id=407317577]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_8gwij")
+
+[node name="Quit" type="TextureButton" parent="." unique_id=197049128]
+layout_mode = 0
+offset_left = 1137.0
+offset_top = 21.00003
+offset_right = 2337.0
+offset_bottom = 621.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("1_2fbfq")
+texture_pressed = ExtResource("2_8gwij")
+texture_hover = ExtResource("3_mah5v")
+script = ExtResource("4_kyhnv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=323339922]
+layout_mode = 0
+offset_top = -900.0
+offset_right = 667.22
+offset_bottom = -1.0
+theme_override_fonts/bold_font = ExtResource("6_mah5v")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/italics_font_size = 16
+bbcode_enabled = true
+text = "[i]Made for the DevelUP Game Jam 2026[/i]
+
+[b]Special Thanks[/b]
+Ewan ! for supporting wholeheartedly
+[add nalang kayo here @/all]
+
+[b]Art/Assets[/b]
+Character Sprites - Leila Kerstine Masmela
+Icon/UI assets - Art Team
+
+[b]Resources[/b]
+FreckleFace - Astigmatic (Google Fonts, OFL License)
+
+[b]Music/Sound[/b]
+Theo Juliano
+
+[b]Design[/b]
+Ronhitz Cabungcag
+
+[b]Art[/b]
+Leila Kerstine Masmela
+Leila Margareth Apolinario
+Gailleca Thea Fabro
+
+[b]PROGRAMMING[/b]
+Ronhitz Cabungcag
+Theo Juliano
+
+
+
+
+
+
+
+
+
+
+
+"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1525178142]
+root_node = NodePath("../RichTextLabel")
+libraries/ = SubResource("AnimationLibrary_ih6pn")
+autoplay = &"credits_scroll"
+
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]

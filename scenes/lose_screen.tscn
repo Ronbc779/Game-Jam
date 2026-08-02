@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bf4cj2hwfman3" path="res://scripts/LoseScreen.gd" id="1_1n1m7"]
 [ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="2_73mov"]
+[ext_resource type="Texture2D" uid="uid://bkfcejkq5nscg" path="res://assets/images/ui/quit.png" id="3_0wxbn"]
+[ext_resource type="Texture2D" uid="uid://d4jnmnk7d7uka" path="res://assets/images/ui/quit_pressed.png" id="4_jylt6"]
+[ext_resource type="Texture2D" uid="uid://b58yo3vgp3hhn" path="res://assets/images/ui/quit_hover.png" id="5_ivinc"]
+[ext_resource type="Script" uid="uid://kmfstlfqxj8" path="res://scenes/titleReturn.gd" id="6_0wxbn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3j6d"]
 bg_color = Color(0.70447725, 0.20947486, 0.27219552, 1)
@@ -75,3 +79,17 @@ theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3j6d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aeugc")
 text = "Play Again"
+
+[node name="Quit" type="TextureButton" parent="." unique_id=409633709]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 495.0
+offset_right = 1788.0
+offset_bottom = 1095.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_0wxbn")
+texture_pressed = ExtResource("4_jylt6")
+texture_hover = ExtResource("5_ivinc")
+script = ExtResource("6_0wxbn")
+
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]

@@ -12,9 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://b47ygj2g4w6xr" path="res://assets/images/ui/info_hover.png" id="8_70i5f"]
 [ext_resource type="Texture2D" uid="uid://dn21qttcnyjev" path="res://assets/images/ui/credits.png" id="9_i42df"]
 [ext_resource type="Texture2D" uid="uid://dk1ujxss6lbsp" path="res://assets/images/ui/credits_pressed.png" id="10_7jp70"]
+[ext_resource type="Script" uid="uid://t8vmrypdai4o" path="res://scripts/info.gd" id="10_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://bhsb5vbcikqxk" path="res://assets/images/ui/credits_hover.png" id="11_mxgkd"]
 [ext_resource type="Texture2D" uid="uid://bkfcejkq5nscg" path="res://assets/images/ui/quit.png" id="12_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://d4jnmnk7d7uka" path="res://assets/images/ui/quit_pressed.png" id="13_3dmrc"]
+[ext_resource type="Script" uid="uid://cgene0hecmyqv" path="res://scripts/credits.gd" id="14_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://b58yo3vgp3hhn" path="res://assets/images/ui/quit_hover.png" id="14_81l6r"]
 
 [sub_resource type="Image" id="Image_con2f"]
@@ -966,6 +968,7 @@ scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("6_13sgg")
 texture_pressed = ExtResource("7_i6lef")
 texture_hover = ExtResource("8_70i5f")
+script = ExtResource("10_g6gyw")
 
 [node name="Credits" type="TextureButton" parent="Control" unique_id=1744347782]
 layout_mode = 0
@@ -977,6 +980,7 @@ scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("9_i42df")
 texture_pressed = ExtResource("10_7jp70")
 texture_hover = ExtResource("11_mxgkd")
+script = ExtResource("14_3dmrc")
 
 [node name="Quit" type="TextureButton" parent="Control" unique_id=835935414]
 layout_mode = 0
