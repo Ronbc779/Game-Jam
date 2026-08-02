@@ -12,12 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://b47ygj2g4w6xr" path="res://assets/images/ui/info_hover.png" id="8_70i5f"]
 [ext_resource type="Texture2D" uid="uid://dn21qttcnyjev" path="res://assets/images/ui/credits.png" id="9_i42df"]
 [ext_resource type="Texture2D" uid="uid://dk1ujxss6lbsp" path="res://assets/images/ui/credits_pressed.png" id="10_7jp70"]
-[ext_resource type="Script" uid="uid://t8vmrypdai4o" path="res://scripts/info.gd" id="10_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://bhsb5vbcikqxk" path="res://assets/images/ui/credits_hover.png" id="11_mxgkd"]
 [ext_resource type="Texture2D" uid="uid://bkfcejkq5nscg" path="res://assets/images/ui/quit.png" id="12_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://d4jnmnk7d7uka" path="res://assets/images/ui/quit_pressed.png" id="13_3dmrc"]
 [ext_resource type="Script" uid="uid://cgene0hecmyqv" path="res://scripts/credits_menu.gd" id="14_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://b58yo3vgp3hhn" path="res://assets/images/ui/quit_hover.png" id="14_81l6r"]
+[ext_resource type="Script" uid="uid://cp30ejaboitct" path="res://scripts/info_screen.gd" id="19_rsfmq"]
+[ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="20_oi1it"]
 
 [sub_resource type="Image" id="Image_con2f"]
 data = {
@@ -969,7 +970,6 @@ scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("6_13sgg")
 texture_pressed = ExtResource("7_i6lef")
 texture_hover = ExtResource("8_70i5f")
-script = ExtResource("10_g6gyw")
 
 [node name="Credits" type="TextureButton" parent="Control" unique_id=1744347782]
 layout_mode = 0
@@ -995,7 +995,41 @@ texture_pressed = ExtResource("13_3dmrc")
 texture_hover = ExtResource("14_81l6r")
 script = ExtResource("6_7jp70")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=909031801]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -547.0
+offset_top = -1.0
+offset_right = -164.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.48235294)
+script = ExtResource("19_rsfmq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=200078888]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 368.0
+offset_bottom = 162.0
+theme_override_fonts/bold_font = ExtResource("20_oi1it")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/italics_font_size = 32
+bbcode_enabled = true
+text = "[b]ESC[/b] - Menu
+[b]E[/b] - Interact
+[b]SD/LeftRightArrow[/b] - Movement
+[b]LeftShift/LeftCtrl[/b] - Sprint"
+scroll_active = false
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Control/Start" to="Control/Start" method="_on_pressed"]
 [connection signal="pressed" from="Control/Info" to="Control/Info" method="_on_pressed"]
+[connection signal="pressed" from="Control/Info" to="ColorRect" method="_on_info_pressed"]
 [connection signal="pressed" from="Control/Credits" to="Control/Credits" method="_on_pressed"]
 [connection signal="pressed" from="Control/Quit" to="Control/Quit" method="_on_pressed"]
