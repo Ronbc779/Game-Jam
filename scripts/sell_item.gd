@@ -43,12 +43,13 @@ func update_labels() -> void:
 	buy_button.text = "Buy ₱%d" % (price * quantity)
 
 func _on_buy_pressed() -> void:
-	AudioMang.play_sfx("purchaseSFX")
 	var bought_count := 0
 	for i in quantity:
 		if ShopManager.buy_item(category, item_name, price):
+			AudioMang.play_sfx("purchaseSFX")
 			bought_count += 1
 		else:
+			AudioMang.play_sfx("purchaseFailSFX")
 			break
 
 	if bought_count > 0:

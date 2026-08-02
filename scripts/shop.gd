@@ -29,6 +29,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and player_in_range:
 		if shop_open:
+			AudioMang.play_sfx("closeSFX")
 			close_shop()
 		else:
 			AudioMang.play_sfx("openSFX")

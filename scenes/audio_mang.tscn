@@ -6,7 +6,11 @@
 [ext_resource type="AudioStream" uid="uid://cib61ouyl8531" path="res://assets/audio/menu_Final_loop.ogg" id="3_ndfay"]
 [ext_resource type="AudioStream" uid="uid://4bthlkvm0k38" path="res://assets/audio/purchase_success.ogg" id="5_egdpv"]
 [ext_resource type="AudioStream" uid="uid://bvxqevgcvxlx" path="res://assets/audio/select_item.ogg" id="6_0860m"]
+[ext_resource type="AudioStream" uid="uid://ddl3n8j2ce81i" path="res://assets/audio/purchase_fail.ogg" id="6_id60x"]
 [ext_resource type="AudioStream" uid="uid://bwqidhnicaf2m" path="res://assets/audio/open_menu.ogg" id="7_wsb2l"]
+[ext_resource type="AudioStream" uid="uid://b7wqosk82jwbc" path="res://assets/audio/win_Final.ogg" id="8_wsb2l"]
+[ext_resource type="AudioStream" uid="uid://cy86nbj7qajvm" path="res://assets/audio/lose_Final.ogg" id="9_p7qn8"]
+[ext_resource type="AudioStream" uid="uid://b7s2uj88ahvy1" path="res://assets/audio/closeMenu_Final.ogg" id="10_p7qn8"]
 
 [node name="audio_mang" type="Node" unique_id=521133932 node_paths=PackedStringArray("clips")]
 script = ExtResource("1_58syv")
@@ -26,8 +30,20 @@ stream = ExtResource("3_ndfay")
 [node name="purchaseSFX" type="AudioStreamPlayer" parent="clips" unique_id=507308772]
 stream = ExtResource("5_egdpv")
 
+[node name="purchaseFailSFX" type="AudioStreamPlayer" parent="clips" unique_id=1572298510]
+stream = ExtResource("6_id60x")
+
 [node name="pickSFX" type="AudioStreamPlayer" parent="clips" unique_id=2082257107]
 stream = ExtResource("6_0860m")
 
 [node name="openSFX" type="AudioStreamPlayer" parent="clips" unique_id=1984222887]
 stream = ExtResource("7_wsb2l")
+
+[node name="winSFX" type="AudioStreamPlayer" parent="clips" unique_id=1638411267]
+stream = ExtResource("8_wsb2l")
+
+[node name="loseSFX" type="AudioStreamPlayer" parent="clips" unique_id=906649955]
+stream = ExtResource("9_p7qn8")
+
+[node name="closeSFX" type="AudioStreamPlayer" parent="clips" unique_id=2069357747]
+stream = ExtResource("10_p7qn8")
