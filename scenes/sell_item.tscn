@@ -16,7 +16,9 @@ grow_vertical = 2
 script = ExtResource("1_k4cy3")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1954325847]
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("2_m35c4")
 
 [node name="NameLabel" type="Label" parent="." unique_id=769703523]

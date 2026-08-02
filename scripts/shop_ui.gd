@@ -10,4 +10,5 @@ func populate(category: String, items: Array) -> void:
 	for item in items:
 		var row = sell_item_scene.instantiate()
 		item_container.add_child(row)
-		row.setup(item["name"], item["price"], category)
+		var texture = item.get("texture", null)
+		row.setup(item["name"], item["price"], category, texture)

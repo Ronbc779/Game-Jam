@@ -5,26 +5,26 @@ signal checklist_updated
 var shops: Dictionary = {
 	"toy": {
 		"items": [
-			{"name": "Trumpo", "price": 100},
-			{"name": "Pogs", "price": 180},
-			{"name": "Yoyo", "price": 250},
+			{"name": "Trumpo", "price": 100, "texture": preload("res://assets/images/toys/trumpo.png")},
+			{"name": "Pogs", "price": 180, "texture": preload("res://assets/images/toys/pogs.png")},
+			{"name": "Yoyo", "price": 250, "texture": preload("res://assets/images/toys/yo-yo.png")},
 		]
 	},
 	"souvenir": {
 		"items": [
-			{"name": "Keychain", "price": 80},
-			{"name": "Fridge Magnet", "price": 60},
-			{"name": "Pututoy", "price": 150},
+			{"name": "Keychain", "price": 80, "texture": preload("res://assets/images/souvenir/keychain.png")},
+			{"name": "Dreamcatcher", "price": 60, "texture": preload("res://assets/images/souvenir/dreamcatcher.png")},
+			{"name": "Abaniko", "price": 150, "texture": preload("res://assets/images/souvenir/abaniko.png")},
 		]
 	},
 	"food": {
 		"items": [
-			{"name": "Polvoron",  "price": 100},
-			{"name": "Chicharon",  "price": 200},
-			{"name": "Dried Mangoes", "price": 300},
-			{"name": "Mani", "price": 90},
-			{"name": "Suman", "price": 90},
-			{"name": "Biscocho", "price": 90},
+			{"name": "Polvoron",  "price": 100, "texture": preload("res://assets/images/food/polvoron.png")},
+			{"name": "Chicharon",  "price": 200, "texture": preload("res://assets/images/food/chicharon.png")},
+			{"name": "Dried Mangoes", "price": 300, "texture": preload("res://assets/images/food/dried mango.png")},
+			{"name": "Mani", "price": 90, "texture": preload("res://assets/images/food/mani.png")},
+			{"name": "Suman", "price": 90, "texture": preload("res://assets/images/food/suman.png")},
+			{"name": "Biscocho", "price": 90, "texture": preload("res://assets/images/food/biscocho.png")},
 		]
 	},
 }
@@ -57,8 +57,8 @@ var requirement_types_pool: Array = [
 	{"type": "item", "value": "Yoyo"},
 	{"type": "item", "value": "Pogs"},
 	{"type": "item", "value": "Keychain"},
-	{"type": "item", "value": "Fridge Magnet"},
-	{"type": "item", "value": "Pututoy"},
+	{"type": "item", "value": "Dreamcatcher"},
+	{"type": "item", "value": "Abaniko"},
 ]
 
 var category_message_templates: Array = [
