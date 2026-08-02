@@ -1,6 +1,7 @@
 extends Control
 
 signal boarding_time_reached
+signal PM_check(pm_check: bool)
 
 @onready var label: Label = $Label
 @onready var boarding_label: Label = $BoardingLabel
@@ -17,7 +18,8 @@ var flash_on: bool = false
 func _ready() -> void:
 	var system_time := Time.get_time_dict_from_system()
 	start_total_minutes = system_time["hour"] * 60 + system_time["minute"]
-
+	var pm_check: bool = true if system_time["hour"]>17 else false
+	PM_check.emit(pm_check)
 	timer.wait_time = 1.0
 	timer.one_shot = false
 	timer.autostart = true

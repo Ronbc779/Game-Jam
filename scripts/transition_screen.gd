@@ -24,3 +24,6 @@ func transition(): # Transition start
 	color_rect.visible = true
 	animation.play("to_black")
 	
+func transition_enter(): # Transition start
+	color_rect.visible = true
+	animation.play("to_scene")

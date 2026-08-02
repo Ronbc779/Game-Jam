@@ -140,3 +140,4 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="PM_check" from="CanvasLayer/timer" to="." method="_on_timer_pm_check"]
