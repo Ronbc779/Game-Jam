@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bhsb5vbcikqxk" path="res://assets/images/ui/credits_hover.png" id="11_mxgkd"]
 [ext_resource type="Texture2D" uid="uid://bkfcejkq5nscg" path="res://assets/images/ui/quit.png" id="12_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://d4jnmnk7d7uka" path="res://assets/images/ui/quit_pressed.png" id="13_3dmrc"]
-[ext_resource type="Script" uid="uid://cgene0hecmyqv" path="res://scripts/credits.gd" id="14_3dmrc"]
+[ext_resource type="Script" uid="uid://cgene0hecmyqv" path="res://scripts/credits_menu.gd" id="14_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://b58yo3vgp3hhn" path="res://assets/images/ui/quit_hover.png" id="14_81l6r"]
 
 [sub_resource type="Image" id="Image_con2f"]
@@ -926,11 +926,12 @@ script = ExtResource("1_yqeox")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1458551944]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1788642800]
+[node name="bg" type="TextureRect" parent="." unique_id=1788642800]
 offset_left = -683.0
 offset_top = -392.0
 offset_right = 672.0
 offset_bottom = 387.0
+texture = ExtResource("2_7jp70")
 
 [node name="logo" type="TextureRect" parent="." unique_id=886182185]
 offset_left = -249.0
