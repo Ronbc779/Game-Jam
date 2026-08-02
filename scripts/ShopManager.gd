@@ -5,9 +5,9 @@ signal checklist_updated
 var shops: Dictionary = {
 	"toy": {
 		"items": [
-			{"name": "Wooden Yoyo", "price": 100},
-			{"name": "Lato-lato", "price": 180},
-			{"name": "Sungka Set", "price": 250},
+			{"name": "Trumpo", "price": 100},
+			{"name": "Pogs", "price": 180},
+			{"name": "Yoyo", "price": 250},
 		]
 	},
 	"souvenir": {
@@ -19,10 +19,12 @@ var shops: Dictionary = {
 	},
 	"food": {
 		"items": [
-			{"name": "Bukopie",  "price": 100},
-			{"name": "Tunapie",  "price": 200},
-			{"name": "Applepie", "price": 300},
-			{"name": "Otap",     "price": 90},
+			{"name": "Polvoron",  "price": 100},
+			{"name": "Chicharon",  "price": 200},
+			{"name": "Dried Mangoes", "price": 300},
+			{"name": "Mani", "price": 90},
+			{"name": "Suman", "price": 90},
+			{"name": "Biscocho", "price": 90},
 		]
 	},
 }
@@ -33,21 +35,32 @@ var people_pool: Array = [
 	{"name": "Girlie", "avatar": preload("res://icon.svg")},
 	{"name": "Panying", "avatar": preload("res://icon.svg")},
 	{"name": "Ate Grace", "avatar": null},
+	{"name": "Tita Princess", "avatar": null},
+	{"name": "Tito Boy", "avatar": null},
+	{"name": "AAA Mama Globe", "avatar": null},
+	{"name": "Papa", "avatar": null},
+	{"name": "Kuya Kim", "avatar": null},
+	{"name": "Bunso", "avatar": null},
+
 ]
 
 var requirement_types_pool: Array = [
 	{"type": "category", "value": "toy"},
 	{"type": "category", "value": "souvenir"},
 	{"type": "category", "value": "food"},
-	{"type": "item", "value": "Bukopie"},
-	{"type": "item", "value": "Sungka Set"},
-	{"type": "item", "value": "Pututoy"},
-	{"type": "item", "value": "Tunapie"},
-	{"type": "item", "value": "Wooden Yoyo"},
+	{"type": "item", "value": "Polvoron"},
+	{"type": "item", "value": "Chicharon"},
+	{"type": "item", "value": "Dried Mangoes"},
+	{"type": "item", "value": "Mani"},
+	{"type": "item", "value": "Suman"},
+	{"type": "item", "value": "Biscocho"},
+	{"type": "item", "value": "Trumpo"},
+	{"type": "item", "value": "Yoyo"},
+	{"type": "item", "value": "Pogs"},
 	{"type": "item", "value": "Keychain"},
-	{"type": "item", "value": "Applepie"},
-	{"type": "item", "value": "Lato-lato"},
 	{"type": "item", "value": "Fridge Magnet"},
+	{"type": "item", "value": "Pututoy"},
+
 ]
 
 var category_message_templates: Array = [
@@ -57,14 +70,28 @@ var category_message_templates: Array = [
 	"{value} lang, kahit ano basta {value}.",
 	"I forgot to tell you to buy {value}.",
 	"Beh, sabi ni mama bilhan mo raw siya ng {value}.",
-	"Ang cra is ving for to is day's vid is eo is {value}.",
+	"Ang cra is ving for to is day’s vid is yew is {value}.",
+	"Pabili ako teh ng {value}, showcase ko lang sa vlog sa tiktok.",
+	"{value} na kahit ano, sa Lunes bayad",
+	"Uych, sisch, pabilich ngch {value}ch hach? Salamatch.",
+	"Good morning. Pabili ako ng {value}. Salamat.",
+	"b3bang…., {value} lang ak1n. tNx… mwa.",
+	"yohoo, sa {value} ang tingin! yan lang akin, lamats.",
+	"{value} akin ah? ket ano lng,, slr walang signal sa bukid.",
+	"pabili nga {value}, kailangan ni bunso para sa project nya",
 ]
 var item_message_templates: Array = [
 	"Yung {value} lang talaga gusto ko!",
-	"Wag kang uuwi kung wala kang {value}.",
+	"Wag kang uuwi kung wala kang {value}!",
 	"Sabi ko sayo, {value} lang ha!",
 	"Beh, sabi ni mama bilhan mo raw siya ng {value}.",
 	"Uych, sisch, pabilich ngch {value}ch hach? Salamatch.",
+	"Reto kita sa crush mo teh, bilhin mo lang ako ng {value}",
+	"{value} akin ah? slr walang signal sa bukid.",
+	"pabili nga {value}, kailangan ni bunso para sa project nya",
+	"{value} lang akin, sa Lunes bayad.",
+	"Hi'ed. Ang'ed aking'ed kasautan'ed ay'ed... {value}'ed po'ed ate'ed.",
+
 ]
 
 var checklist: Array = []

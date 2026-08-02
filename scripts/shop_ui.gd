@@ -1,6 +1,6 @@
 extends Control
 
-@onready var item_container: Container = $ScrollContainer/ItemContainer  # adjust path to match your tree
+@onready var item_container: Container = $ScrollContainer/ItemContainer
 var sell_item_scene: PackedScene = preload("res://scenes/sell_item.tscn")
 
 func populate(category: String, items: Array) -> void:
