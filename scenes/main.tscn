@@ -12,9 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://dq6yy1olpophn" path="res://assets/images/phone.png" id="6_choun"]
 [ext_resource type="AudioStream" uid="uid://dqocfw6hd1mkq" path="res://assets/audio/footstep_concrete_000.ogg" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://065nkqikkq5v" path="res://scenes/DepartureArea.tscn" id="12_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://dm07mj8sre3ro" path="res://assets/images/arrow.png" id="13_trceg"]
+[ext_resource type="Script" uid="uid://c0sttce5khgil" path="res://scripts/DirectionArrow.gd" id="14_a8y0u"]
+[ext_resource type="Script" uid="uid://dg067r65e8c1c" path="res://scripts/CameraBounds.gd" id="15_jkv2x"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_13qdw"]
 distance = 63.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrivr"]
+normal = Vector2(1, 0)
 
 [node name="main" type="Node2D" unique_id=713853499]
 script = ExtResource("1_choun")
@@ -43,6 +49,17 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1674989224]
 shape = SubResource("WorldBoundaryShape2D_13qdw")
+
+[node name="EdgeLeft" type="StaticBody2D" parent="." unique_id=1028560560]
+position = Vector2(-1750, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EdgeLeft" unique_id=727659307]
+shape = SubResource("WorldBoundaryShape2D_xrivr")
+
+[node name="EdgeRight" type="StaticBody2D" parent="." unique_id=2054603104]
+position = Vector2(3628, 465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EdgeRight" unique_id=773487584]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1254323830]
 script = ExtResource("2_tipki")
@@ -114,30 +131,42 @@ offset_bottom = 20.0
 scale = Vector2(1.885, 1.885)
 
 [node name="Shop1" parent="." unique_id=1341165774 instance=ExtResource("4_jyhfs")]
-position = Vector2(1291, 519)
+position = Vector2(1434, 519)
 category = "food"
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="Shop2" parent="." unique_id=424625855 instance=ExtResource("4_jyhfs")]
-position = Vector2(-431, 519)
+position = Vector2(-917, 519)
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="Shop3" parent="." unique_id=377003193 instance=ExtResource("4_jyhfs")]
-position = Vector2(2330, 519)
+position = Vector2(2549, 519)
 category = "souvenir"
 shop_ui_path = NodePath("../CanvasLayer/Control")
 
 [node name="DepartureArea" parent="." unique_id=853371673 instance=ExtResource("12_eb6dy")]
 position = Vector2(3317, 519)
+edge_left_path = NodePath("../EdgeLeft")
+edge_right_path = NodePath("../EdgeRight")
 
 [node name="main character" parent="." unique_id=1068984735 groups=["player"] instance=ExtResource("1_o5qli")]
 position = Vector2(547, 519)
 sfx_footsteps = ExtResource("9_85g3d")
 
+[node name="DirectionArrow" type="Sprite2D" parent="main character" unique_id=785795760]
+texture_filter = 1
+position = Vector2(0, -67.333336)
+scale = Vector2(0.53125, 0.53125)
+texture = ExtResource("13_trceg")
+script = ExtResource("14_a8y0u")
+
 [node name="Camera2D" type="Camera2D" parent="main character" unique_id=1912602924]
-position = Vector2(9, -65.333336)
+position = Vector2(9, -65.33333)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.5
+script = ExtResource("15_jkv2x")
+edge_left_path = NodePath("../../EdgeLeft")
+edge_right_path = NodePath("../../EdgeRight")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="PM_check" from="CanvasLayer/timer" to="." method="_on_timer_pm_check"]
