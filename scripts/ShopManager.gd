@@ -44,17 +44,17 @@ var shops: Dictionary = {
 }
 
 var people_pool: Array = [
-	{"name": "Tita Baby", "avatar": null},
-	{"name": "Sharmaine", "avatar": null},
-	{"name": "Girlie", "avatar": preload("res://icon.svg")},
-	{"name": "Panying", "avatar": preload("res://icon.svg")},
-	{"name": "Ate Grace", "avatar": null},
-	{"name": "Tita Princess", "avatar": null},
-	{"name": "Tito Boy", "avatar": null},
-	{"name": "AAA Mama Globe", "avatar": null},
-	{"name": "Papa", "avatar": null},
-	{"name": "Kuya Kim", "avatar": null},
-	{"name": "Bunso", "avatar": null},
+	{"name": "Tita Baby", "avatar": preload("res://assets/images/pfp/ate_pfp.png")},
+	{"name": "Sharmaine", "avatar": preload("res://assets/images/pfp/sharmaine_pfp.png")},
+	{"name": "Girlie", "avatar": preload("res://assets/images/pfp/girlie_pfp.png")},
+	{"name": "Panying", "avatar": preload("res://assets/images/pfp/panying_pfp.png")},
+	{"name": "Ate Grace", "avatar": preload("res://assets/images/pfp/ate_pfp.png")},
+	{"name": "Tita Princess", "avatar": preload("res://assets/images/pfp/tita_princess_pfp.png")},
+	{"name": "Tito Boy", "avatar": preload("res://assets/images/pfp/tito_boy_pfp.png")},
+	{"name": "AAA Mama Globe", "avatar": preload("res://assets/images/pfp/mama_globe_pfp.png")},
+	{"name": "Papa", "avatar": preload("res://assets/images/pfp/papa_pfp.png")},
+	{"name": "Kuya Kim", "avatar": preload("res://assets/images/pfp/kuya_pfp.png")},
+	{"name": "Bunso", "avatar": preload("res://assets/images/pfp/bunso_pfp.png")},
 ]
 
 var requirement_types_pool: Array = [
