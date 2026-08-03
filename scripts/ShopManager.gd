@@ -12,6 +12,9 @@ var shops: Dictionary = {
 			{"name": "Cooking Set", "price": 200, "texture": preload("res://assets/images/toys/cooking_set.png")},
 			{"name": "Kite", "price": 90, "texture": preload("res://assets/images/toys/kite.png")},
 			{"name": "Sungka", "price": 250, "texture": preload("res://assets/images/toys/sungka.png")},
+			{"name": "Lego", "price": 275, "texture": preload("res://assets/images/toys/lego_blocks.png")},
+			{"name": "Fidget", "price": 90, "texture": preload("res://assets/images/toys/fidget.png")},
+			{"name": "Hirono", "price": 400, "texture": preload("res://assets/images/toys/hirono.png")},
 			{"name": "Teddy Bear", "price": 300, "texture": preload("res://assets/images/toys/teddy_bear.png")},
 		]
 	},
@@ -30,7 +33,10 @@ var shops: Dictionary = {
 		"items": [
 			{"name": "Polvoron",  "price": 30, "texture": preload("res://assets/images/food/polvoron.png")},
 			{"name": "Chicharon",  "price": 50, "texture": preload("res://assets/images/food/chicharon.png")},
-			{"name": "Dried Mangoes", "price": 120, "texture": preload("res://assets/images/food/dried mango.png")},
+			{"name": "Hopia",  "price": 70, "texture": preload("res://assets/images/food/hopia.png")},
+			{"name": "Otap",  "price": 40, "texture": preload("res://assets/images/food/otap.png")},
+			{"name": "Pichi Pichi",  "price": 155, "texture": preload("res://assets/images/food/pichi_pichi.png")},
+			{"name": "Crinkles",  "price": 80, "texture": preload("res://assets/images/food/crinkles.png")},
 			{"name": "Mani", "price": 25, "texture": preload("res://assets/images/food/mani.png")},
 			{"name": "Suman", "price": 35, "texture": preload("res://assets/images/food/suman.png")},
 			{"name": "Biscocho", "price": 40, "texture": preload("res://assets/images/food/biscocho.png")},
@@ -39,6 +45,7 @@ var shops: Dictionary = {
 			{"name": "Buko Pie", "price": 180, "texture": preload("res://assets/images/food/buko_pie.png")},
 			{"name": "Pastillas", "price": 65, "texture": preload("res://assets/images/food/pastillas.png")},
 			{"name": "Puto", "price": 55, "texture": preload("res://assets/images/food/puto.png")},
+			{"name": "Dried Mangoes", "price": 120, "texture": preload("res://assets/images/food/dried mango.png")},
 		]
 	},
 }
@@ -73,6 +80,10 @@ var requirement_types_pool: Array = [
 	{"type": "item", "value": "Buko Pie"},
 	{"type": "item", "value": "Pastillas"},
 	{"type": "item", "value": "Puto"},
+	{"type": "item", "value": "Hopia"},
+	{"type": "item", "value": "Otap"},
+	{"type": "item", "value": "Pichi Pichi"},
+	{"type": "item", "value": "Crinkles"},
 	#toy
 	{"type": "item", "value": "Trumpo"},
 	{"type": "item", "value": "Yoyo"},
@@ -82,6 +93,9 @@ var requirement_types_pool: Array = [
 	{"type": "item", "value": "Kite"},
 	{"type": "item", "value": "Sungka"},
 	{"type": "item", "value": "Teddy Bear"},
+	{"type": "item", "value": "Lego"},
+	{"type": "item", "value": "Hirono"},
+	{"type": "item", "value": "Fidget"},
 	#souvenir
 	{"type": "item", "value": "Abaniko"},
 	{"type": "item", "value": "Bag"},
