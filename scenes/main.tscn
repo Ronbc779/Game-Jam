@@ -21,12 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://dus2eql4asb5q" path="res://assets/images/ui/resume_pressed.png" id="18_yq6so"]
 [ext_resource type="Texture2D" uid="uid://ceea4goe6u8kg" path="res://assets/images/ui/restart_hover.png" id="19_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://djgx1dhlcehq7" path="res://assets/images/ui/resume_hover.png" id="19_fv21b"]
-[ext_resource type="Script" uid="uid://cvrw040rt0dp3" path="res://scripts/restart_main.gd" id="20_pm3ni"]
-[ext_resource type="Script" uid="uid://w85ygf5d4t33" path="res://scripts/resume_ui.gd" id="20_tel4y"]
 [ext_resource type="Texture2D" uid="uid://bkfcejkq5nscg" path="res://assets/images/ui/quit.png" id="21_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://d4jnmnk7d7uka" path="res://assets/images/ui/quit_pressed.png" id="22_yq6so"]
 [ext_resource type="Texture2D" uid="uid://b58yo3vgp3hhn" path="res://assets/images/ui/quit_hover.png" id="23_fv21b"]
-[ext_resource type="Script" uid="uid://clpoalv030cb5" path="res://scenes/quit.gd" id="24_y6deb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_13qdw"]
 distance = 63.0
@@ -185,7 +182,6 @@ _data = {
 script = ExtResource("1_choun")
 
 [node name="Background" type="Parallax2D" parent="." unique_id=243750747]
-visible = false
 scroll_scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1194767]
@@ -194,7 +190,6 @@ scale = Vector2(12.0625, 6.2890625)
 texture = ExtResource("2_0wfyh")
 
 [node name="Foreground" type="Parallax2D" parent="." unique_id=260017114]
-visible = false
 scroll_scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=1149201009]
@@ -370,7 +365,6 @@ scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("17_2f3dj")
 texture_pressed = ExtResource("18_yq6so")
 texture_hover = ExtResource("19_fv21b")
-script = ExtResource("20_tel4y")
 
 [node name="Restart" type="TextureButton" parent="pause_menu" unique_id=453673678]
 offset_left = 547.0
@@ -381,7 +375,6 @@ scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("17_y6deb")
 texture_pressed = ExtResource("18_og1vs")
 texture_hover = ExtResource("19_2wyq8")
-script = ExtResource("20_pm3ni")
 
 [node name="Quit" type="TextureButton" parent="pause_menu" unique_id=1037330745]
 offset_left = 547.0
@@ -392,10 +385,12 @@ scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("21_2f3dj")
 texture_pressed = ExtResource("22_yq6so")
 texture_hover = ExtResource("23_fv21b")
-script = ExtResource("24_y6deb")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="PM_check" from="CanvasLayer/timer" to="." method="_on_timer_pm_check"]
 [connection signal="pressed" from="pause_menu/Resume" to="pause_menu/Resume" method="_on_pressed"]
+[connection signal="pressed" from="pause_menu/Restart" to="pause_menu" method="_on_restart_pressed"]
 [connection signal="pressed" from="pause_menu/Restart" to="pause_menu/Restart" method="_on_pressed"]
+[connection signal="pressed" from="pause_menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="pause_menu/Quit" to="pause_menu" method="_on_quit_pressed"]
 [connection signal="pressed" from="pause_menu/Quit" to="pause_menu/Quit" method="_on_pressed"]

@@ -1,0 +1,266 @@
+[gd_scene format=3 uid="uid://eyvusp5nolad"]
+
+[ext_resource type="Script" uid="uid://oxqcjgifr2tu" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="2_7jp70"]
+[ext_resource type="Texture2D" uid="uid://dw2b4ue68jdlk" path="res://assets/images/ui/menu_bg.png" id="2_81l6r"]
+[ext_resource type="FontFile" uid="uid://5f5iqyerwxnj" path="res://assets/others/Oswald-Medium.ttf" id="4_oi1it"]
+[ext_resource type="Script" uid="uid://6jxucm5gyt0p" path="res://scripts/game_quit.gd" id="6_7jp70"]
+[ext_resource type="Texture2D" uid="uid://ep3g427ygroi" path="res://assets/images/ui/info.png" id="6_13sgg"]
+[ext_resource type="Texture2D" uid="uid://dwnluxknkdang" path="res://assets/images/ui/info_pressed.png" id="7_i6lef"]
+[ext_resource type="Texture2D" uid="uid://b47ygj2g4w6xr" path="res://assets/images/ui/info_hover.png" id="8_70i5f"]
+[ext_resource type="Texture2D" uid="uid://dn21qttcnyjev" path="res://assets/images/ui/credits.png" id="9_i42df"]
+[ext_resource type="Texture2D" uid="uid://dk1ujxss6lbsp" path="res://assets/images/ui/credits_pressed.png" id="10_7jp70"]
+[ext_resource type="Texture2D" uid="uid://bhsb5vbcikqxk" path="res://assets/images/ui/credits_hover.png" id="11_mxgkd"]
+[ext_resource type="Texture2D" uid="uid://bkfcejkq5nscg" path="res://assets/images/ui/quit.png" id="12_g6gyw"]
+[ext_resource type="Texture2D" uid="uid://d4jnmnk7d7uka" path="res://assets/images/ui/quit_pressed.png" id="13_3dmrc"]
+[ext_resource type="Script" uid="uid://cgene0hecmyqv" path="res://scripts/credits_menu.gd" id="14_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://b58yo3vgp3hhn" path="res://assets/images/ui/quit_hover.png" id="14_81l6r"]
+[ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="20_oi1it"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2892522, 0.28925204, 0.28925207, 0.3019608)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 35.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.45882353, 0.7019608, 0.85490197, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 35.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.827451, 0.92156863, 0.9843137, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 35.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.29803923, 0.43137255, 0.5058824, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 35.0
+
+[sub_resource type="Theme" id="Theme_uqdht"]
+Button/colors/font_color = Color(0.32092628, 0.42596018, 0.48906058, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 96
+Button/fonts/font = ExtResource("4_oi1it")
+Button/styles/disabled = SubResource("StyleBoxFlat_4ytvr")
+Button/styles/focus = SubResource("StyleBoxFlat_g3eks")
+Button/styles/hover = SubResource("StyleBoxFlat_v86rl")
+Button/styles/normal = SubResource("StyleBoxFlat_13sgg")
+Button/styles/pressed = SubResource("StyleBoxFlat_i6lef")
+
+[sub_resource type="Theme" id="Theme_rsfmq"]
+
+[node name="menu" type="Node2D" unique_id=1498993157]
+script = ExtResource("1_yqeox")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1788642800]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_81l6r")
+
+[node name="logo" type="TextureRect" parent="." unique_id=886182185]
+offset_left = -121.0
+offset_top = -426.0
+offset_right = 386.0
+offset_bottom = -200.0
+texture = ExtResource("2_7jp70")
+
+[node name="Control" type="Control" parent="." unique_id=550425442]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -481.38
+offset_right = -441.38
+offset_bottom = 40.0
+theme = SubResource("Theme_uqdht")
+
+[node name="Info" type="TextureButton" parent="Control" unique_id=413438931]
+layout_mode = 0
+offset_left = -124.00001
+offset_top = 19.700005
+offset_right = 1076.0
+offset_bottom = 619.7
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_13sgg")
+texture_pressed = ExtResource("7_i6lef")
+texture_hover = ExtResource("8_70i5f")
+
+[node name="Credits" type="TextureButton" parent="Control" unique_id=1744347782]
+layout_mode = 0
+offset_left = -124.00001
+offset_top = 94.055
+offset_right = 1076.0
+offset_bottom = 694.055
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("9_i42df")
+texture_pressed = ExtResource("10_7jp70")
+texture_hover = ExtResource("11_mxgkd")
+script = ExtResource("14_3dmrc")
+
+[node name="Quit" type="TextureButton" parent="Control" unique_id=835935414]
+layout_mode = 0
+offset_left = -124.00001
+offset_top = 174.63501
+offset_right = 1076.0
+offset_bottom = 774.635
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("12_g6gyw")
+texture_pressed = ExtResource("13_3dmrc")
+texture_hover = ExtResource("14_81l6r")
+script = ExtResource("6_7jp70")
+
+[node name="Start" type="Button" parent="Control" unique_id=1456487057]
+layout_mode = 0
+offset_left = -335.0
+offset_top = -120.0
+offset_right = 342.0
+offset_bottom = 31.0
+theme = SubResource("Theme_rsfmq")
+theme_type_variation = &"FlatButton"
+text = "START"
+
+[node name="Info2" type="Button" parent="Control" unique_id=582786979]
+layout_mode = 0
+offset_left = -335.0
+offset_top = 40.0
+offset_right = 342.0
+offset_bottom = 191.0
+theme = SubResource("Theme_rsfmq")
+theme_type_variation = &"FlatButton"
+text = "INFO"
+
+[node name="Credits2" type="Button" parent="Control" unique_id=395641703]
+layout_mode = 0
+offset_left = -335.0
+offset_top = 200.0
+offset_right = 342.0
+offset_bottom = 351.0
+theme = SubResource("Theme_rsfmq")
+theme_type_variation = &"FlatButton"
+text = "CREDITS"
+
+[node name="Credits3" type="Button" parent="Control" unique_id=811907044]
+layout_mode = 0
+offset_left = -336.62
+offset_top = 364.0
+offset_right = 340.38
+offset_bottom = 515.0
+theme = SubResource("Theme_rsfmq")
+theme_type_variation = &"FlatButton"
+text = "QUIT"
+
+[node name="info_scrn" type="ColorRect" parent="." unique_id=909031801]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -166.0
+offset_right = 391.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.48235294)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="info_scrn" unique_id=200078888]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 494.0
+offset_bottom = 266.0
+theme_override_fonts/bold_font = ExtResource("20_oi1it")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+bbcode_enabled = true
+text = "[b]ESC[/b] - Menu
+[b]E[/b] - Interact
+[b]SD/LeftRightArrow[/b] - Movement
+[b]LeftShift/LeftCtrl[/b] - Sprint"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=243126143]
+zoom = Vector2(0.67, 0.67)
+
+[connection signal="pressed" from="Control/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="Control/Info" to="Control/Info" method="_on_pressed"]
+[connection signal="pressed" from="Control/Info" to="info_scrn" method="_on_info_pressed"]
+[connection signal="pressed" from="Control/Credits" to="Control/Credits" method="_on_pressed"]
+[connection signal="pressed" from="Control/Quit" to="Control/Quit" method="_on_pressed"]
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Start" to="Control/Start" method="_on_pressed"]
+[connection signal="pressed" from="Control/Info2" to="Control/Info2" method="_on_pressed"]
+[connection signal="pressed" from="Control/Credits2" to="Control/Credits2" method="_on_pressed"]
+[connection signal="pressed" from="Control/Credits3" to="Control/Credits3" method="_on_pressed"]
+[connection signal="ready" from="info_scrn" to="." method="_on_info_scrn_ready"]
