@@ -47,6 +47,7 @@ func _on_buy_pressed() -> void:
 	for i in quantity:
 		if ShopManager.buy_item(category, item_name, price):
 			AudioMang.play_sfx("purchaseSFX")
+			Currency.purchase_success.emit()
 			bought_count += 1
 		else:
 			AudioMang.play_sfx("purchaseFailSFX")
