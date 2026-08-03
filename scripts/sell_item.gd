@@ -13,6 +13,8 @@ var category: String = ""
 var quantity: int = 1
 var max_quantity: int = 10
 
+signal purchase_success
+
 func setup(new_name: String, new_price: int, new_category: String, texture: Texture2D = null) -> void:
 	item_name = new_name
 	price = new_price
@@ -47,6 +49,7 @@ func _on_buy_pressed() -> void:
 	for i in quantity:
 		if ShopManager.buy_item(category, item_name, price):
 			AudioMang.play_sfx("purchaseSFX")
+			purchase_success.emit()
 			bought_count += 1
 		else:
 			AudioMang.play_sfx("purchaseFailSFX")
