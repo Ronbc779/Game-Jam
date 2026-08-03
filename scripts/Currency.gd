@@ -1,6 +1,7 @@
 extends Node
 
 signal money_changed(new_amount)
+signal purchase_success
 
 var money: int = 500
 

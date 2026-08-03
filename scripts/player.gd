@@ -10,7 +10,12 @@ const SPRINT_MULT = 1.5
 # For walk cycle: sets footstep hit frames relative to spritesheet 
 var walk_footstep_frames : Array = [1,5] 
 var idle_footstep_frames : Array = [6,13]
+var bought : bool = false
 
+func _ready() -> void:
+	Currency.purchase_success.connect(_on_purchase_success)
+	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
+	
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
@@ -21,6 +26,9 @@ func _physics_process(delta: float) -> void:
 	if abs(velocity.x) > 1:
 		animated_sprite_2d.sprite_frames.set_animation_speed("walk", 8)
 		animated_sprite_2d.animation = "walk"
+		bought = false
+	elif bought == true:
+		animated_sprite_2d.animation = "purchase"
 	else:
 		animated_sprite_2d.animation = "idle"
 	if direction:
@@ -48,10 +56,18 @@ func load_sfx(sfx_to_load):
 # Footsteps randomizer 
 func _on_animated_sprite_2d_frame_changed() -> void:
 	load_sfx(sfx_footsteps)
-
 	if animated_sprite_2d.animation == "idle" and animated_sprite_2d.frame in idle_footstep_frames:
 		pass #TBD
 	if animated_sprite_2d.animation == "walk" and animated_sprite_2d.frame in walk_footstep_frames:
 		sfx_player.play()
+		
+func _on_purchase_success() -> void:
+	bought = true
+	animated_sprite_2d.frame = 0
+	animated_sprite_2d.play("purchase")
 
+func _on_animation_finished() -> void:
+	if animated_sprite_2d.animation == "purchase":
+		bought = false	
+		animated_sprite_2d.play("idle")
 		
