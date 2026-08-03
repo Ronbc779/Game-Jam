@@ -43,20 +43,13 @@ func update_labels() -> void:
 	buy_button.text = "Buy ₱%d" % (price * quantity)
 
 func _on_buy_pressed() -> void:
-	var bought_count := 0
 	for i in quantity:
 		if ShopManager.buy_item(category, item_name, price):
 			AudioMang.play_sfx("purchaseSFX")
 			Currency.purchase_success.emit()
-			bought_count += 1
 		else:
 			AudioMang.play_sfx("purchaseFailSFX")
 			break
-
-	if bought_count > 0:
-		print("Bought %d x %s for ₱%d" % [bought_count, item_name, price * bought_count])
-	if bought_count < quantity:
-		print("Could only afford %d of %d" % [bought_count, quantity])
 
 	quantity = 1
 	update_labels()
