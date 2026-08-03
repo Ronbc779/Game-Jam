@@ -10,6 +10,7 @@ var shop_open: bool = false
 var shop_ui: Control
 
 func _ready() -> void:
+	$Sprite2D.texture = load("res://assets/images/stores/%s_shop.png" % category)
 	shop_ui = get_node(shop_ui_path)
 	shop_ui.visible = false
 	prompt_label.visible = false

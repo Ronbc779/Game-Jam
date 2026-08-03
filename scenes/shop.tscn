@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgfy1hdddn10w"]
 
-[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="1_lx5au"]
 [ext_resource type="Script" uid="uid://bp7gejlnr0p3n" path="res://scripts/shop.gd" id="1_xfvoa"]
+[ext_resource type="Texture2D" uid="uid://dttxyd6433exa" path="res://assets/images/stores/toy_shop.png" id="2_1l46r"]
 [ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="3_1l46r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
@@ -11,9 +11,9 @@ size = Vector2(108, 108)
 script = ExtResource("1_xfvoa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=150873569]
-position = Vector2(0, -54)
-scale = Vector2(0.828125, 0.84375)
-texture = ExtResource("1_lx5au")
+position = Vector2(0, -150)
+scale = Vector2(5.5, 5.607)
+texture = ExtResource("2_1l46r")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=451416821]
 
