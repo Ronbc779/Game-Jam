@@ -5,7 +5,7 @@ extends StaticBody2D
 
 @export var edge_left_path: NodePath
 @export var edge_right_path: NodePath
-@export var edge_margin: float = 100.0
+@export var edge_margin: float = 200.0
 
 var player_in_range: bool = false
 

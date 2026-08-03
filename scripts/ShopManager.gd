@@ -51,7 +51,7 @@ var shops: Dictionary = {
 }
 
 var people_pool: Array = [
-	{"name": "Tita Baby", "avatar": preload("res://assets/images/pfp/ate_pfp.png")},
+	{"name": "Tita Baby", "avatar": preload("res://assets/images/pfp/tita_baby_pfp.png")},
 	{"name": "Sharmaine", "avatar": preload("res://assets/images/pfp/sharmaine_pfp.png")},
 	{"name": "Girlie", "avatar": preload("res://assets/images/pfp/girlie_pfp.png")},
 	{"name": "Panying", "avatar": preload("res://assets/images/pfp/panying_pfp.png")},
@@ -62,6 +62,16 @@ var people_pool: Array = [
 	{"name": "Papa", "avatar": preload("res://assets/images/pfp/papa_pfp.png")},
 	{"name": "Kuya Kim", "avatar": preload("res://assets/images/pfp/kuya_pfp.png")},
 	{"name": "Bunso", "avatar": preload("res://assets/images/pfp/bunso_pfp.png")},
+	{"name": "Marites", "avatar": preload("res://assets/images/pfp/default_pfp-1.png")},
+	{"name": "Niki Batumbakal", "avatar": preload("res://assets/images/pfp/default_pfp-1.png")},
+	{"name": "Cardo Dalisay", "avatar": preload("res://assets/images/pfp/default_pfp-1.png")},
+	{"name": "Avatar Aang", "avatar": preload("res://assets/images/pfp/aang_pfp.png")},
+	{"name": "Oble", "avatar": preload("res://assets/images/pfp/oble_pfp.png")},
+	{"name": "Maddie Pares", "avatar": preload("res://assets/images/pfp/default_pfp-1.png")},
+	{"name": "Sir Raulo", "avatar": preload("res://assets/images/pfp/default_pfp-1.png")},
+	{"name": "longganisa seller", "avatar": preload("res://assets/images/pfp/default_pfp-1.png")},
+	{"name": "Meta AI", "avatar": preload("res://assets/images/pfp/meta_ai_pfp.png")},
+
 ]
 
 var requirement_types_pool: Array = [

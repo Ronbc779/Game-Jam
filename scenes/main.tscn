@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dh6elx3bkgkqh" path="res://scripts/main.gd" id="1_choun"]
 [ext_resource type="PackedScene" uid="uid://d3p0w7xedufrr" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://dvctp73y6hqyx" path="res://assets/images/background.png" id="2_og1vs"]
 [ext_resource type="FontFile" uid="uid://dlt66hrua16kh" path="res://assets/others/FreckleFace-Regular.ttf" id="2_tefeu"]
 [ext_resource type="Script" uid="uid://ch0r4pmc5pans" path="res://scripts/hud.gd" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://c75i5pq6q8xxq" path="res://scenes/shop_ui.tscn" id="3_sugp2"]
@@ -183,11 +183,13 @@ script = ExtResource("1_choun")
 
 [node name="Background" type="Parallax2D" parent="." unique_id=243750747]
 scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1420, 0)
+repeat_times = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1194767]
-position = Vector2(583, 246)
-scale = Vector2(12.0625, 6.2890625)
-texture = ExtResource("2_0wfyh")
+position = Vector2(572.99976, 340.49997)
+scale = Vector2(2.2210937, 2.0916667)
+texture = ExtResource("2_og1vs")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1767108926]
 position = Vector2(550, 583)
@@ -328,14 +330,6 @@ position_smoothing_speed = 3.5
 script = ExtResource("15_jkv2x")
 edge_left_path = NodePath("../../EdgeLeft")
 edge_right_path = NodePath("../../EdgeRight")
-
-[node name="Foreground" type="Parallax2D" parent="." unique_id=260017114]
-scroll_scale = Vector2(1.5, 1.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=1149201009]
-position = Vector2(606, 509)
-scale = Vector2(10.703125, 4.5390625)
-texture = ExtResource("2_0wfyh")
 
 [node name="pause_menu" type="CanvasLayer" parent="." unique_id=43070589]
 process_mode = 3
