@@ -189,14 +189,6 @@ position = Vector2(583, 246)
 scale = Vector2(12.0625, 6.2890625)
 texture = ExtResource("2_0wfyh")
 
-[node name="Foreground" type="Parallax2D" parent="." unique_id=260017114]
-scroll_scale = Vector2(1.5, 1.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=1149201009]
-position = Vector2(606, 509)
-scale = Vector2(10.703125, 4.5390625)
-texture = ExtResource("2_0wfyh")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1767108926]
 position = Vector2(550, 583)
 metadata/_edit_group_ = true
@@ -336,6 +328,14 @@ position_smoothing_speed = 3.5
 script = ExtResource("15_jkv2x")
 edge_left_path = NodePath("../../EdgeLeft")
 edge_right_path = NodePath("../../EdgeRight")
+
+[node name="Foreground" type="Parallax2D" parent="." unique_id=260017114]
+scroll_scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=1149201009]
+position = Vector2(606, 509)
+scale = Vector2(10.703125, 4.5390625)
+texture = ExtResource("2_0wfyh")
 
 [node name="pause_menu" type="CanvasLayer" parent="." unique_id=43070589]
 process_mode = 3
