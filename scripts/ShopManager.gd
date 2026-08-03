@@ -123,6 +123,30 @@ var category_message_templates: Array = [
 	"yohoo, sa {value} ang tingin! yan lang akin, lamats.",
 	"{value} akin ah? ket ano lng,, slr walang signal sa bukid.",
 	"pabili nga {value}, kailangan ni bunso para sa project nya",
+	"Na sanaaa mabilhan ako ng {value}...",
+	"#cravings_satisfied kapag binilhan ako ng {value}",
+	"{value}! Last last last request na!",
+	"Hmmm… surprise me! Basta {value}.",
+	"Me lang ba nagmamanifest ng {value}?",
+	"OMG! Sana may {value}.",
+	"Maniniwala na talaga akong dreams do really come true kapag inuwian ako ng {value}.",
+	"Ang bait mo ‘no? Pero mas mabait ka kapag binilhan mo ako ng {value}.",
+	"Mas worth it luggage fee mo kapag may laman iyang {value}.",
+	"HAHAHAHAHA seryoso, {value} lang gusto ko.",
+	"Side Quest Idea: Collect {value}.",
+	"Kahit isang {value} lang, oks na oks na ako.",
+	"HUY! {value} ha!",
+	"Huwag ka umuwi kapag walang {value}.",
+	"Team {value} ako today!!!",
+	"i believe may extra space pa para sa {value} ko.",
+	"tenks lods, {value} lang sapat na.",
+	"FINAL FINAL FINAL REMINDER: {value}.",
+	"Buy now, regret never! Bilhin mo na iyang {value}.",
+	"Lahat kami gusto ng {value}!",
+	"Sabi nila best gift daw ay {value}.",
+	"YOLO! Kaya bili ka na ng maraming {value}!",
+	"Ikw na bhla sa {value}",
+
 ]
 var item_message_templates: Array = [
 	"Yung {value} lang talaga gusto ko!",
@@ -135,6 +159,38 @@ var item_message_templates: Array = [
 	"pabili nga {value}, kailangan ni bunso para sa project nya",
 	"{value} lang akin, sa Lunes bayad.",
 	"Hi'ed. Ang'ed aking'ed kasautan'ed ay'ed... {value}'ed po'ed ate'ed.",
+	"Libre lang naman mangarap ng {value}.",
+	"Kaya pa talagang magsiksik ng {value} diyan.",
+	"Huwag mo kalimutan yung {value} ha!",
+	"Libre mo na rin ako ng {value}! Please please please.",
+	"Boss, pasabay {value}!",
+	"Hindi ba sabi nila sharing is caring? Baka naman kahit limang {value} lang.",
+	"Daan nang daan {value} sa newsfeed ko. Ibig sabihin yata magkakaroon ako!",
+	"Uy may {value} yata riyan. Baka naman!",
+	"Listahan ng gusto kong matanggap
+	     1. {value}
+	  Oh diba isa lang, iyan lang gusto ko! Thank you agad!",
+	"Hindi naman sa may request ako ha pero parang iba talaga kapag may dalang {value}.",
+	"Bagay na magpapangiti sa akin: {value}.",
+	"Plus points ka sa akin kapag may {value}.",
+	"If available, {value} please.",
+	"{value} cutie!!!",
+	"Ang nasa wishlist ko ay {value}.",
+	"Bawal umuwi ng walang {value}.",
+	"Me lang ba gusto ng {value}?",
+	"Pa-add po ng {value} sa basket hehe thanks.",
+	"thank you agad sa {value}!",
+	"{value} supremacy !!",
+	"Sinasabi ng puso ko na mabibilhan mo ako ng {value}.",
+	"Basta may {value} goods na ako.",
+	"Nanaginip ako, binilhan mo raw ako ng {value}. Real or fake?",
+	"Ganda sana ng {value}. Kapag wala ok lang…medyo…",
+	"'Gusto ko ng {value}' 4 signs
+	1. Happy
+	2. Disappointed
+	3. Flirty
+	4. Angry",
+
 ]
 
 var checklist: Array = []
